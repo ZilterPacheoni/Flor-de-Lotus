@@ -76,7 +76,6 @@ ${mensagem}`;
     });
 });
 
-// SUBSTITUA TODO O CÓDIGO ANTERIOR DO SELECT POR ESTE:
 
 document.addEventListener('DOMContentLoaded', function () {
     const praiasSelect = document.getElementById('praias-select');
@@ -112,16 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ADICIONE NO FINAL DO main.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const botoesVoltar = document.querySelectorAll('.voltar-menu-praias');
-    const menuPraias = document.querySelector('.praias-dropdown-box');
+    const topoPraias = document.getElementById('topo-praias');
 
     botoesVoltar.forEach(botao => {
         botao.addEventListener('click', function () {
-            if (menuPraias) {
-                menuPraias.scrollIntoView({
+            if (topoPraias) {
+                topoPraias.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
