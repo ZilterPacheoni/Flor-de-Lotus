@@ -45,3 +45,87 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#telefone').inputmask('(99) 9 9999-9999');
     });
 });
+
+// Adicione este código no final do seu main.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#fale-conosco form');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const telefone = document.getElementById('telefone').value;
+        const email = document.getElementById('email').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        const texto = `Olá, tudo bem? Me chamo ${nome}.
+Telefone: ${telefone}
+E-mail: ${email}
+
+Gostaria de mais informações sobre hospedagem na Pousada Flor de Lotus.
+
+Mensagem:
+${mensagem}`;
+
+        const numeroWhatsApp = '557399728505';
+
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+
+        window.open(url, '_blank');
+    });
+});
+
+// SUBSTITUA TODO O CÓDIGO ANTERIOR DO SELECT POR ESTE:
+
+document.addEventListener('DOMContentLoaded', function () {
+    const praiasSelect = document.getElementById('praias-select');
+
+    if (praiasSelect) {
+        praiasSelect.addEventListener('change', function () {
+            const targetId = this.value;
+
+            // Remove abas ativas
+            const tabs = document.querySelectorAll('#praias .tab-pane');
+            tabs.forEach(tab => {
+                tab.classList.remove('active', 'show');
+            });
+
+            // Ativa aba selecionada
+            const selectedTab = document.getElementById(targetId);
+            if (selectedTab) {
+                selectedTab.classList.add('active', 'show');
+            }
+
+            // Atualiza botões desktop também
+            const buttons = document.querySelectorAll('.nav-praias .nav-link');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            const activeButton = document.querySelector(
+                `.nav-praias button[data-bs-target="#${targetId}"]`
+            );
+
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        });
+    }
+});
+
+// ADICIONE NO FINAL DO main.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    const botoesVoltar = document.querySelectorAll('.voltar-menu-praias');
+    const menuPraias = document.querySelector('.praias-dropdown-box');
+
+    botoesVoltar.forEach(botao => {
+        botao.addEventListener('click', function () {
+            if (menuPraias) {
+                menuPraias.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
