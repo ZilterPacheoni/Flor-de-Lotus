@@ -5,41 +5,58 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seleciona todos os links de navegação
     const navLinks = document.querySelectorAll('.nav-link');
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Previne o comportamento padrão
-            e.preventDefault();
+// SUBSTITUA APENAS ESTE BLOCO DO SEU main.js:
+//
+// navLinks.forEach(link => {
+//     ...
+// });
+//
+// PELO CÓDIGO ABAIXO:
 
-            // Remove active de todos os links
-            navLinks.forEach(l => l.classList.remove('active'));
-            
-            // Adiciona active ao link clicado
-            this.classList.add('active');
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
 
-            // Pega o id do elemento alvo do link
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+        // Remove active de todos os links
+        navLinks.forEach(l => l.classList.remove('active'));
 
-            if (targetElement) {
-                // Calcula a posição considerando o header fixo
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+        // Ativa o clicado
+        this.classList.add('active');
 
-                // Scroll suave para a posição
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+        // Pega o destino
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
 
-                // Fecha o menu mobile se estiver aberto
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                    bsCollapse.hide();
-                }
+        if (targetElement) {
+
+            // Ajuste padrão desktop
+            let offset = headerHeight + 20;
+
+            // Ajuste melhor para celular / tablet
+            if (window.innerWidth < 992) {
+                offset = headerHeight + 70;
             }
-        });
+
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+            window.scrollTo({
+                top: elementPosition - offset,
+                behavior: 'smooth'
+            });
+
+            // Fecha menu mobile corretamente
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse =
+                    bootstrap.Collapse.getInstance(navbarCollapse) ||
+                    new bootstrap.Collapse(navbarCollapse);
+
+                bsCollapse.hide();
+            }
+        }
     });
+});
 
     $(document).ready(function() {
         $('#telefone').inputmask('(99) 9 9999-9999');
