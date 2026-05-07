@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         botao.addEventListener('click', function () {
             if (topoPraias) {
                 // Ajuste extra para subir mais e mostrar o título completo
-                const offset = 120;
+                const offset = 140;
 
                 const elementPosition = topoPraias.getBoundingClientRect().top + window.pageYOffset;
 
