@@ -111,6 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// SUBSTITUA O CÓDIGO ANTERIOR DO BOTÃO VOLTAR POR ESTE:
+
 document.addEventListener('DOMContentLoaded', function () {
     const botoesVoltar = document.querySelectorAll('.voltar-menu-praias');
     const topoPraias = document.getElementById('topo-praias');
@@ -118,9 +120,14 @@ document.addEventListener('DOMContentLoaded', function () {
     botoesVoltar.forEach(botao => {
         botao.addEventListener('click', function () {
             if (topoPraias) {
-                topoPraias.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                // Ajuste extra para subir mais e mostrar o título completo
+                const offset = 120;
+
+                const elementPosition = topoPraias.getBoundingClientRect().top + window.pageYOffset;
+
+                window.scrollTo({
+                    top: elementPosition - offset,
+                    behavior: 'smooth'
                 });
             }
         });
