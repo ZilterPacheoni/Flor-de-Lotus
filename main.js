@@ -1,82 +1,79 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Altura do header fixo (ajuste conforme necessário)
+    // Altura do header fixo
     const headerHeight = document.getElementById('cabecalho').offsetHeight;
 
-    // Seleciona todos os links de navegação
+    // Links do menu principal
     const navLinks = document.querySelectorAll('.nav-link');
 
-// SUBSTITUA APENAS ESTE BLOCO DO SEU main.js:
-//
-// navLinks.forEach(link => {
-//     ...
-// });
-//
-// PELO CÓDIGO ABAIXO:
+    // =========================
+    // NAVEGAÇÃO SUAVE CORRIGIDA
+    // =========================
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
 
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
+            // Remove active
+            navLinks.forEach(l => l.classList.remove('active'));
 
-        // Remove active de todos os links
-        navLinks.forEach(l => l.classList.remove('active'));
+            // Ativa clicado
+            this.classList.add('active');
 
-        // Ativa o clicado
-        this.classList.add('active');
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-        // Pega o destino
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+            if (targetElement) {
 
-        if (targetElement) {
+                let offset;
 
-            // Ajuste padrão desktop
-            let offset = headerHeight + 20;
+                // Ajuste para celular/tablet
+                if (window.innerWidth < 992) {
+                    offset = headerHeight + 180;
+                } else {
+                    // Desktop
+                    offset = headerHeight + 20;
+                }
 
-            // Ajuste melhor para celular / tablet
-            if (window.innerWidth < 992) {
-                offset = headerHeight + 70;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+                window.scrollTo({
+                    top: elementPosition - offset,
+                    behavior: 'smooth'
+                });
+
+                // Fecha menu mobile
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse =
+                        bootstrap.Collapse.getInstance(navbarCollapse) ||
+                        new bootstrap.Collapse(navbarCollapse);
+
+                    bsCollapse.hide();
+                }
             }
-
-            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-
-            window.scrollTo({
-                top: elementPosition - offset,
-                behavior: 'smooth'
-            });
-
-            // Fecha menu mobile corretamente
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-
-            if (navbarCollapse.classList.contains('show')) {
-                const bsCollapse =
-                    bootstrap.Collapse.getInstance(navbarCollapse) ||
-                    new bootstrap.Collapse(navbarCollapse);
-
-                bsCollapse.hide();
-            }
-        }
+        });
     });
-});
 
-    $(document).ready(function() {
-        $('#telefone').inputmask('(99) 9 9999-9999');
-    });
-});
+    // =========================
+    // MÁSCARA TELEFONE
+    // =========================
+    $('#telefone').inputmask('(99) 9 9999-9999');
 
-// Adicione este código no final do seu main.js
-
-document.addEventListener('DOMContentLoaded', function() {
+    // =========================
+    // FORMULÁRIO WHATSAPP
+    // =========================
     const form = document.querySelector('#fale-conosco form');
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        const nome = document.getElementById('nome').value;
-        const telefone = document.getElementById('telefone').value;
-        const email = document.getElementById('email').value;
-        const mensagem = document.getElementById('mensagem').value;
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
 
-        const texto = `Olá, tudo bem? Me chamo ${nome}.
+            const texto = `Olá, tudo bem? Me chamo ${nome}.
 Telefone: ${telefone}
 E-mail: ${email}
 
@@ -85,62 +82,76 @@ Gostaria de mais informações sobre hospedagem na Pousada Flor de Lotus.
 Mensagem:
 ${mensagem}`;
 
-        const numeroWhatsApp = '557399728505';
+            const numeroWhatsApp = '557399728505';
 
-        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
 
-        window.open(url, '_blank');
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const praiasSelect = document.getElementById('praias-select');
-
-    if (praiasSelect) {
-        praiasSelect.addEventListener('change', function () {
-            const targetId = this.value;
-
-            // Remove abas ativas
-            const tabs = document.querySelectorAll('#praias .tab-pane');
-            tabs.forEach(tab => {
-                tab.classList.remove('active', 'show');
-            });
-
-            // Ativa aba selecionada
-            const selectedTab = document.getElementById(targetId);
-            if (selectedTab) {
-                selectedTab.classList.add('active', 'show');
-            }
-
-            // Atualiza botões desktop também
-            const buttons = document.querySelectorAll('.nav-praias .nav-link');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            const activeButton = document.querySelector(
-                `.nav-praias button[data-bs-target="#${targetId}"]`
-            );
-
-            if (activeButton) {
-                activeButton.classList.add('active');
-            }
+            window.open(url, '_blank');
         });
     }
-});
 
-// SUBSTITUA O CÓDIGO ANTERIOR DO BOTÃO VOLTAR POR ESTE:
+// SUBSTITUA TODO O BLOCO DO DROPDOWN PRAIAS POR ESTE:
 
-document.addEventListener('DOMContentLoaded', function () {
+const praiasSelect = document.getElementById('praias-select');
+
+if (praiasSelect) {
+
+    praiasSelect.addEventListener('change', function() {
+        const targetId = this.value;
+
+        // Remove de todas
+        document.querySelectorAll('#praias .tab-pane').forEach(tab => {
+            tab.classList.remove('active', 'show');
+        });
+
+        // Ativa selecionada
+        const selectedTab = document.getElementById(targetId);
+
+        if (selectedTab) {
+            selectedTab.classList.add('active', 'show');
+        }
+
+        // Atualiza menu lateral
+        document.querySelectorAll('.nav-praias .nav-link').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        const activeButton = document.querySelector(
+            `.nav-praias button[data-bs-target="#${targetId}"]`
+        );
+
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    });
+
+    // Estado inicial correto
+    const initialTarget = praiasSelect.value;
+
+    document.querySelectorAll('#praias .tab-pane').forEach(tab => {
+        tab.classList.remove('active', 'show');
+    });
+
+    const initialTab = document.getElementById(initialTarget);
+
+    if (initialTab) {
+        initialTab.classList.add('active', 'show');
+    }
+}
+
+    // =========================
+    // BOTÃO VOLTAR MENU PRAIAS
+    // =========================
     const botoesVoltar = document.querySelectorAll('.voltar-menu-praias');
     const topoPraias = document.getElementById('topo-praias');
 
     botoesVoltar.forEach(botao => {
-        botao.addEventListener('click', function () {
+        botao.addEventListener('click', function() {
             if (topoPraias) {
-                // Ajuste extra para subir mais e mostrar o título completo
                 const offset = 140;
 
-                const elementPosition = topoPraias.getBoundingClientRect().top + window.pageYOffset;
+                const elementPosition =
+                    topoPraias.getBoundingClientRect().top + window.pageYOffset;
 
                 window.scrollTo({
                     top: elementPosition - offset,
@@ -149,4 +160,65 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+});
+
+// SUBSTITUA SEU SCRIPT POR ESTE (ele pega o botão clicado corretamente)
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.btn-reservar').forEach(botao => {
+
+        botao.addEventListener('click', function () {
+
+            // PEGA O QUARTO EXATO DESTE BOTÃO
+            const quarto = this.dataset.quarto;
+
+            // Procura a caixa de reserva mais próxima desse quarto
+            const reservaBox = this.closest('.reserva-box');
+
+            const checkin = reservaBox.querySelector('.data-checkin').value;
+            const checkout = reservaBox.querySelector('.data-checkout').value;
+
+            if (!checkin || !checkout) {
+                alert('Por favor, selecione check-in e check-out.');
+                return;
+            }
+
+            // Campo mensagem
+            const mensagem = document.getElementById('mensagem');
+
+            if (mensagem) {
+                mensagem.value =
+`Olá! Gostaria de reservar o ${quarto}.
+
+Período da estadia:
+Check-in: ${checkin}
+Check-out: ${checkout}
+
+Poderiam me passar informações sobre disponibilidade, valores e formas de pagamento para este quarto?`;
+            }
+
+            // Scroll para fale conosco
+            const faleConosco = document.getElementById('fale-conosco');
+
+            if (faleConosco) {
+                const headerHeight =
+                    document.getElementById('cabecalho')?.offsetHeight || 0;
+
+                const posicao =
+                    faleConosco.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    headerHeight -
+                    20;
+
+                window.scrollTo({
+                    top: posicao,
+                    behavior: 'smooth'
+                });
+            }
+
+        });
+
+    });
+
 });
