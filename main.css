@@ -70,11 +70,12 @@ header img:hover{
 
 /* HERO */
 #carousel{
-    max-width: 94%;
-    margin: 0 auto 0 auto;
-    border-radius: 0 0 30px 30px;
+    max-width: 92%;
+    margin: 0 auto;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+    border: 6px solid rgba(255,255,255,0.45);
 }
 
 .img-custom{
@@ -133,6 +134,41 @@ header img:hover{
     color: white;
 }
 
+.foto-sobre-pousada{
+    width: 100%;
+    max-width: 420px;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 22px;
+    padding: 6px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(200,169,107,0.45));
+    box-shadow: 0 18px 38px rgba(0,0,0,0.16);
+    border: 1px solid rgba(200,169,107,0.35);
+}
+
+/* DESKTOP */
+@media (min-width: 1200px){
+
+    .foto-sobre-pousada{
+        max-width: 620px;
+        height: 480px;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 767px){
+    .foto-sobre-pousada{
+        max-width: 92%;
+        height: 220px;
+        border-radius: 18px;
+        padding: 5px;
+        margin-bottom: 24px;
+    }
+}
+
 /* TÍTULOS */
 .section-tittle{
     font-family: 'Playfair Display', serif;
@@ -155,6 +191,16 @@ header img:hover{
 section{
     padding-top: 90px;
     padding-bottom: 90px;
+}
+
+#sobre-a-pousada{
+    padding-top: 12px !important;
+    background:
+        linear-gradient(rgba(250,248,243,0.72), rgba(245,235,221,0.82)),
+        url('./img Pousada/interiorpousada.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 #sobre-a-pousada,

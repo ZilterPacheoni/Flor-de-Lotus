@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Ajuste para celular/tablet
                 if (window.innerWidth < 992) {
-                    offset = headerHeight + 180;
+                    offset = headerHeight + 235;
                 } else {
                     // Desktop
                     offset = headerHeight + 20;
