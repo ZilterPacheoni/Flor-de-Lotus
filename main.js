@@ -362,3 +362,97 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =========================
+   GALERIA DE QUARTOS E LIGHTBOX
+   ========================= */
+
+// Função para abrir a imagem em ecrã inteiro (Lightbox)
+function openLightbox(imgSrc) {
+    // Define a imagem do modal igual à imagem que foi clicada
+    const lightboxImg = document.getElementById('lightboxImage');
+    lightboxImg.src = imgSrc;
+    
+    // Abre o Modal do Bootstrap
+    const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+    lightboxModal.show();
+}
+
+/* =========================
+   RESERVA GLOBAL (SEÇÃO QUARTOS)
+   ========================= */
+
+function enviarReservaQuartos() {
+    // Pega os valores do novo formulário
+    const quarto = document.getElementById("quarto-selecionado").value;
+    const checkin = document.getElementById("data-checkin-global").value;
+    const checkout = document.getElementById("data-checkout-global").value;
+
+    // Validação básica
+    if (!checkin || !checkout) {
+        alert("Por favor, selecione as datas de check-in e check-out.");
+        return;
+    }
+
+    if (checkout <= checkin) {
+        alert("A data de check-out deve ser maior que a data de check-in.");
+        return;
+    }
+
+    // Monta a mensagem para o WhatsApp
+    const mensagem = 
+        "🛎️ *Nova Solicitação de Reserva* 🛎️%0A%0A" +
+        "Olá! Gostaria de consultar a disponibilidade para o seguinte quarto:%0A%0A" +
+        "🛏️ *Quarto Escolhido:* " + quarto + "%0A" +
+        "📅 *Check-in:* " + checkin + "%0A" +
+        "📅 *Check-out:* " + checkout + "%0A%0A" +
+        "Poderiam me passar informações sobre valores e formas de pagamento?";
+
+    const numeroWhatsApp = "557399728505"; // Teu número
+    const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagem}`;
+
+    // Abre o WhatsApp numa nova aba
+    window.open(url, "_blank");
+}
+
+/* =========================
+   SINCRONIZAÇÃO E ANIMAÇÃO DAS MINIATURAS
+   ========================= */
+document.addEventListener('DOMContentLoaded', function () {
+    // Seleciona todas as galerias de quartos da página
+    const galleries = document.querySelectorAll('.quarto-gallery');
+
+    galleries.forEach(gallery => {
+        const carouselElement = gallery.querySelector('.carousel');
+        const thumbsContainer = gallery.querySelector('.img-thumbs-container');
+        const thumbs = thumbsContainer.querySelectorAll('.quarto-img-thumb');
+        
+        // Se a secção não tiver carrossel ou miniaturas, ignora
+        if (!carouselElement || thumbs.length === 0) return;
+
+        // Captura todas as imagens do carrossel numa lista (array)
+        const carouselItems = carouselElement.querySelectorAll('.carousel-item img');
+        const images = Array.from(carouselItems).map(img => img.src);
+
+        // Evento disparado pelo Bootstrap SEMPRE que o carrossel muda (automático ou clique nas setas)
+        carouselElement.addEventListener('slide.bs.carousel', function (e) {
+            const nextIndex = e.to; // O índice da próxima imagem que vai aparecer (0, 1 ou 2)
+
+            // Lógica de Rotação Cíclica: Se a principal for a 0, as minis são a 1 e 2, etc.
+            const thumb1Index = (nextIndex + 1) % images.length;
+            const thumb2Index = (nextIndex + 2) % images.length;
+
+            // 1. Adiciona a classe que faz o efeito visual das miniaturas "voarem"
+            thumbsContainer.classList.add('animating-thumbs');
+
+            // 2. Aguarda 300 milissegundos (o tempo do CSS) para trocar a imagem "escondida"
+            setTimeout(() => {
+                thumbs[0].src = images[thumb1Index];
+                thumbs[1].src = images[thumb2Index];
+
+                // 3. Remove a classe, fazendo as novas imagens voltarem para o lugar suavemente
+                thumbsContainer.classList.remove('animating-thumbs');
+            }, 300);
+        });
+    });
+});

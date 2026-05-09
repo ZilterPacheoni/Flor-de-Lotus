@@ -1,4 +1,4 @@
-:root{
+:root {
     --verde-oliva: #6B8E6B;
     --areia: #FAF8F3;
     --bege: #F5EBDD;
@@ -7,10 +7,11 @@
     --azul-profundo: #1F3C4D;
     --azul-medio: #2E5B6E;
     --branco: #ffffff;
-    --sombra: 0 10px 30px rgba(0,0,0,0.12);
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -19,7 +20,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--areia);
     color: var(--azul-profundo);
@@ -27,10 +28,10 @@ body{
 }
 
 /* HEADER */
-#cabecalho{
-    background: rgba(31,60,77,0.88);
+#cabecalho {
+    background: rgba(31, 60, 77, 0.88);
     backdrop-filter: blur(14px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -39,22 +40,22 @@ body{
     scroll-margin-top: 90px;
 }
 
-header img{
+header img {
     width: 220px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
-header img:hover{
+header img:hover {
     transform: scale(1.03);
 }
 
-.navbar-toggler{
-    background-color: rgba(255,255,255,0.85);
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.85);
     border: none;
 }
 
-#cabecalho .nav .nav-link{
+#cabecalho .nav .nav-link {
     color: var(--branco);
     font-weight: 500;
     border-radius: 30px;
@@ -62,38 +63,38 @@ header img:hover{
     transition: all 0.3s ease;
 }
 
-#cabecalho .nav .nav-link:hover{
+#cabecalho .nav .nav-link:hover {
     color: var(--dourado);
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
-#cabecalho .nav .nav-link.active{
+#cabecalho .nav .nav-link.active {
     background: var(--dourado);
     color: var(--azul-profundo);
 }
 
 /* HERO */
-#carousel{
+#carousel {
     max-width: 92%;
     margin: 0 auto;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
-    border: 6px solid rgba(255,255,255,0.45);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    border: 6px solid rgba(255, 255, 255, 0.45);
 }
 
-.img-custom{
+.img-custom {
     width: 100%;
     height: 78vh;
     object-fit: cover;
     filter: brightness(0.72);
 }
 
-.carousel-item{
+.carousel-item {
     position: relative;
 }
 
-.hero-overlay{
+.hero-overlay {
     position: absolute;
     inset: 0;
     display: flex;
@@ -103,26 +104,26 @@ header img:hover{
     padding: 20px;
 }
 
-.hero-content{
+.hero-content {
     max-width: 850px;
     color: white;
     animation: fadeUp 1.2s ease;
 }
 
-.hero-content h1{
+.hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 700;
     margin-bottom: 20px;
-    text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
-.hero-content p{
+.hero-content p {
     font-size: clamp(1rem, 2vw, 1.4rem);
     margin-bottom: 28px;
 }
 
-.btn-luxo{
+.btn-luxo {
     background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
     color: white;
     padding: 14px 34px;
@@ -133,12 +134,12 @@ header img:hover{
     transition: all 0.3s ease;
 }
 
-.btn-luxo:hover{
+.btn-luxo:hover {
     transform: translateY(-3px);
     color: white;
 }
 
-.foto-sobre-pousada{
+.foto-sobre-pousada {
     width: 100%;
     height: 520px;
     object-fit: cover;
@@ -147,20 +148,18 @@ header img:hover{
     border-radius: 22px;
     padding: 6px;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.9),
-        rgba(200,169,107,0.45)
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(200, 169, 107, 0.45));
 
-    box-shadow: 0 18px 38px rgba(0,0,0,0.16);
-    border: 1px solid rgba(200,169,107,0.35);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(200, 169, 107, 0.35);
 }
 
 /* DESKTOP */
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
 
-    .foto-sobre-pousada{
+    .foto-sobre-pousada {
         max-width: 620px;
         height: 480px;
     }
@@ -168,9 +167,9 @@ header img:hover{
 }
 
 /* MOBILE */
-@media (max-width: 767px){
+@media (max-width: 767px) {
 
-    .foto-sobre-pousada{
+    .foto-sobre-pousada {
         max-width: 92%;
         height: 220px;
         border-radius: 18px;
@@ -180,7 +179,7 @@ header img:hover{
 }
 
 /* TÍTULOS */
-.section-tittle{
+.section-tittle {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.2rem, 4vw, 3.5rem);
     font-weight: 600;
@@ -188,25 +187,25 @@ header img:hover{
     margin-bottom: 25px;
 }
 
-.section-tittle span{
+.section-tittle span {
     color: var(--dourado);
 }
 
-.text-colored{
+.text-colored {
     color: var(--azul-profundo);
     font-weight: 600;
 }
 
 /* SEÇÕES */
-section{
+section {
     padding-top: 90px;
     padding-bottom: 90px;
 }
 
-#sobre-a-pousada{
+#sobre-a-pousada {
     padding-top: 12px !important;
     background:
-        linear-gradient(rgba(250,248,243,0.72), rgba(245,235,221,0.82)),
+        linear-gradient(rgba(250, 248, 243, 0.72), rgba(245, 235, 221, 0.82)),
         url('./img Pousada/interiorpousada.jpg');
     background-size: cover;
     background-position: center;
@@ -214,25 +213,25 @@ section{
 }
 
 #sobre-a-pousada,
-#praias{
+#praias {
     background: linear-gradient(180deg, #f8f4eb, #fdfbf7);
 }
 
 #quartos,
-#area-de-lazer{
+#area-de-lazer {
     background: var(--bege);
 }
 
 /* IMAGENS */
-img{
+img {
     transition: all 0.4s ease;
 }
 
-img:hover{
+img:hover {
     transform: scale(1.02);
 }
 
-.quarto-img-desktop{
+.quarto-img-desktop {
     width: 100%;
     max-width: 340px;
     height: 340px;
@@ -241,36 +240,36 @@ img:hover{
     box-shadow: var(--sombra);
 }
 
-.quarto-mobile-img{
+.quarto-mobile-img {
     width: 100%;
     height: 240px;
     object-fit: cover;
     border-radius: 22px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* RESERVA */
-.reserva-box{
-    background: rgba(255,255,255,0.72);
+.reserva-box {
+    background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(10px);
     padding: 22px;
     border-radius: 20px;
     box-shadow: var(--sombra);
-    border: 1px solid rgba(200,169,107,0.25);
+    border: 1px solid rgba(200, 169, 107, 0.25);
 }
 
-.form-control{
+.form-control {
     border-radius: 14px;
     padding: 12px;
-    border: 1px solid rgba(31,60,77,0.15);
+    border: 1px solid rgba(31, 60, 77, 0.15);
 }
 
-.form-control:focus{
+.form-control:focus {
     border-color: var(--dourado);
-    box-shadow: 0 0 10px rgba(200,169,107,0.25);
+    box-shadow: 0 0 10px rgba(200, 169, 107, 0.25);
 }
 
-.btn-reservar{
+.btn-reservar {
     background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
     border: none;
     color: white;
@@ -281,67 +280,67 @@ img:hover{
 }
 
 .btn-reservar:hover,
-#fale-conosco button:hover{
+#fale-conosco button:hover {
     transform: translateY(-2px);
 }
 
 /* PRAIAS */
-.nav-praias .nav-link{
+.nav-praias .nav-link {
     border-radius: 14px;
     margin-bottom: 8px;
     transition: all 0.3s ease;
 }
 
-.nav-praias .nav-link.active{
+.nav-praias .nav-link.active {
     background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
     color: white;
 }
 
-.nav-praias .nav-link:hover{
-    background: rgba(200,169,107,0.12);
+.nav-praias .nav-link:hover {
+    background: rgba(200, 169, 107, 0.12);
 }
 
-.col-md-3 img{
+.col-md-3 img {
     width: 100%;
     border-radius: 18px;
     box-shadow: var(--sombra);
 }
 
 /* DROPDOWN PRAIAS */
-.praias-dropdown-box{
+.praias-dropdown-box {
     background: white;
     padding: 18px;
     border-radius: 18px;
     box-shadow: var(--sombra);
-    border: 1px solid rgba(200,169,107,0.35);
+    border: 1px solid rgba(200, 169, 107, 0.35);
 }
 
-.praias-dropdown{
+.praias-dropdown {
     border-radius: 14px;
     padding: 12px;
     border: 1px solid var(--dourado);
 }
 
 /* SOCIAL */
-.social-links li{
+.social-links li {
     list-style: none;
     display: inline-block;
     margin-right: 12px;
 }
 
-.social-links a{
+.social-links a {
     text-decoration: none;
     font-size: 2rem;
     color: var(--azul-profundo);
     transition: all 0.3s ease;
 }
 
-.social-links a:hover{
+.social-links a:hover {
     color: var(--dourado);
 }
 
 /* FOOTER */
-footer{
+footer {
     text-align: center;
     background: var(--azul-profundo);
     color: white;
@@ -351,103 +350,178 @@ footer{
 }
 
 /* MOBILE */
-@media (max-width: 991px){
+@media (max-width: 991px) {
 
-    .img-custom{
+    .img-custom {
         height: 75vh;
     }
 
-    header img{
+    header img {
         width: 170px;
     }
 
-    .hero-content h1{
+    .hero-content h1 {
         font-size: 2.5rem;
     }
 
-    .hero-content p{
+    .hero-content p {
         font-size: 1rem;
     }
 
-    .carousel-item img{
+    .carousel-item img {
         height: 75vh;
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
 
-    section{
+    section {
         padding-top: 70px;
         padding-bottom: 70px;
     }
 
-    .carousel-item img{
+    .carousel-item img {
         height: 65vh;
     }
 
-    .reserva-box{
+    .reserva-box {
         padding: 16px;
     }
 
-    #praias .tab-pane .col-md-3{
+    #praias .tab-pane .col-md-3 {
         padding: 6px;
         margin-bottom: 14px;
     }
 
-    #praias .voltar-menu-praias{
+    #praias .voltar-menu-praias {
         width: 100%;
         border-radius: 30px;
     }
 }
 
 /* ANIMAÇÃO */
-@keyframes fadeUp{
-    from{
+@keyframes fadeUp {
+    from {
         opacity: 0;
         transform: translateY(30px);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
 /* AJUSTE DESKTOP - PRAIAS */
-@media (min-width: 992px){
+@media (min-width: 992px) {
 
-    #praias .tab-content{
+    #praias .tab-content {
         padding-top: 70px;
     }
 
 }
 
-.carousel-quarto-desktop {
-    position: relative;
+.quarto-gallery {
+    display: flex;
+    gap: 12px;
+    height: 350px;
+}
+
+/* Área da foto grande */
+.img-main-container {
+    flex: 3;
+    /* Ocupa cerca de 75% do espaço */
+    height: 100%;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 20px;
+    position: relative;
+    box-shadow: var(--sombra);
+    cursor: zoom-in;
 }
 
-.quarto-img-desktop {
+.quarto-img-main {
     width: 100%;
-    height: 420px;
+    height: 100%;
     object-fit: cover;
-    display: block;
-    border-radius: 20px;
+    transition: transform 0.4s ease;
 }
 
-.carousel-quarto-desktop .carousel-control-prev,
-.carousel-quarto-desktop .carousel-control-next {
-    width: 50px;
-    top: 50%;
-    transform: translateY(-50%);
+.img-main-container:hover .quarto-img-main {
+    transform: scale(1.03);
 }
 
-.carousel-quarto-desktop .carousel-control-prev {
-    left: 10px;
+/* Área das fotos pequenas */
+.img-thumbs-container {
+    flex: 1;
+    /* Ocupa os 25% restantes */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
 }
 
-.carousel-quarto-desktop .carousel-control-next {
-    right: 80px;
+.quarto-img-thumb {
+    width: 100%;
+    height: calc(50% - 6px);
+    /* Metade da altura menos o espaço (gap) */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+    opacity: 0.85;
+}
+
+/* Efeito ao passar o mouse na miniatura */
+.quarto-img-thumb:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    border: 2px solid var(--dourado);
+}
+
+/* Lista de Comodidades do quarto */
+.quarto-amenities {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.quarto-amenities li {
+    margin-bottom: 10px;
+    color: var(--azul-profundo);
+    font-size: 0.95rem;
+}
+
+.quarto-amenities i {
+    color: var(--dourado);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* AJUSTES PARA CELULAR E TABLET */
+@media (max-width: 991px) {
+    .quarto-gallery {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .img-main-container {
+        height: 250px;
+        width: 100%;
+    }
+
+    .img-thumbs-container {
+        flex-direction: row;
+        /* Miniaturas ficam lado a lado */
+        height: 110px;
+        width: 100%;
+    }
+
+    .quarto-img-thumb {
+        height: 100%;
+        width: calc(50% - 6px);
+        /* Duas fotos dividindo a largura */
+    }
 }
 
 .mapa-container {
@@ -457,7 +531,7 @@ footer{
 
 .mapa-container iframe {
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -472,6 +546,7 @@ footer{
     color: white !important;
     cursor: pointer;
 }
+
 #fale-conosco .btn-enviar {
     background-color: #157347;
     color: white;
@@ -480,55 +555,53 @@ footer{
 }
 
 /* AVALIAÇÕES */
-#avaliacoes{
+#avaliacoes {
     background: linear-gradient(180deg, #fdfbf7, #f5ebdd);
 }
 
-.card-avaliacao{
+.card-avaliacao {
     background: white;
     padding: 28px;
     border-radius: 22px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: 0.3s ease;
     height: 100%;
 }
 
-.card-avaliacao:hover{
+.card-avaliacao:hover {
     transform: translateY(-6px);
 }
 
-.avaliacao-topo{
+.avaliacao-topo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 18px;
 }
 
-.avaliacao-topo h5{
+.avaliacao-topo h5 {
     margin: 0;
     font-weight: 600;
     color: var(--azul-profundo);
 }
 
-.card-avaliacao p{
+.card-avaliacao p {
     color: #555;
     line-height: 1.7;
 }
 
-.card-avaliacao small{
+.card-avaliacao small {
     color: var(--dourado-escuro);
     font-weight: 600;
 }
 
-.btn-avaliacoes{
+.btn-avaliacoes {
     display: inline-block;
     padding: 14px 30px;
     border-radius: 30px;
-    background: linear-gradient(
-        135deg,
-        var(--dourado),
-        var(--dourado-escuro)
-    );
+    background: linear-gradient(135deg,
+            var(--dourado),
+            var(--dourado-escuro));
 
     color: white;
     text-decoration: none;
@@ -536,14 +609,14 @@ footer{
     transition: 0.3s ease;
 }
 
-.btn-avaliacoes:hover{
+.btn-avaliacoes:hover {
     transform: translateY(-3px);
     color: white;
 }
 
 /* PÁGINA DE AVALIAÇÕES */
 
-.nota-geral-box{
+.nota-geral-box {
     background: white;
     border-radius: 24px;
     padding: 30px;
@@ -556,16 +629,14 @@ footer{
     margin: 0 auto;
 }
 
-.nota-numero{
+.nota-numero {
     width: 100px;
     height: 100px;
     border-radius: 22px;
 
-    background: linear-gradient(
-        135deg,
-        var(--dourado),
-        var(--dourado-escuro)
-    );
+    background: linear-gradient(135deg,
+            var(--dourado),
+            var(--dourado-escuro));
 
     color: white;
 
@@ -577,7 +648,7 @@ footer{
     font-weight: bold;
 }
 
-.nota-card{
+.nota-card {
     background: white;
     border-radius: 20px;
     padding: 24px;
@@ -585,11 +656,11 @@ footer{
     box-shadow: var(--sombra);
 }
 
-.nota-card h5{
+.nota-card h5 {
     margin-bottom: 14px;
 }
 
-.nota-card span{
+.nota-card span {
     font-size: 2rem;
     font-weight: bold;
     color: var(--dourado-escuro);
@@ -597,7 +668,7 @@ footer{
 
 /* BOTÃO FINAL RESERVA */
 
-.btn-reserva-final{
+.btn-reserva-final {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -606,11 +677,9 @@ footer{
 
     border-radius: 40px;
 
-    background: linear-gradient(
-        135deg,
-        #198754,
-        #157347
-    );
+    background: linear-gradient(135deg,
+            #198754,
+            #157347);
 
     color: white;
     text-decoration: none;
@@ -618,14 +687,14 @@ footer{
     font-size: 1.1rem;
     font-weight: 600;
 
-    box-shadow: 0 10px 24px rgba(25,135,84,0.25);
+    box-shadow: 0 10px 24px rgba(25, 135, 84, 0.25);
 
     transition: 0.3s ease;
 }
 
 /* BOX RESERVA FINAL */
 
-.box-reserva-final{
+.box-reserva-final {
     background: white;
     padding: 35px;
     border-radius: 24px;
@@ -655,12 +724,10 @@ footer{
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(
-            circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
             rgba(212, 175, 55, 0.22),
             rgba(212, 175, 55, 0.08) 18%,
-            transparent 42%
-        );
+            transparent 42%);
     opacity: 0;
     transition: opacity 0.25s ease;
     pointer-events: none;
@@ -673,12 +740,10 @@ footer{
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(
-            115deg,
+        linear-gradient(115deg,
             transparent 20%,
-            rgba(255,255,255,0.35),
-            transparent 80%
-        );
+            rgba(255, 255, 255, 0.35),
+            transparent 80%);
     transform: translateX(-120%);
     transition: transform 0.6s ease;
     pointer-events: none;
@@ -686,7 +751,7 @@ footer{
 }
 
 /* conteúdo acima do brilho */
-.card-avaliacao > * {
+.card-avaliacao>* {
     position: relative;
     z-index: 3;
 }
@@ -695,8 +760,8 @@ footer{
 @media (min-width: 992px) {
     .card-avaliacao:hover {
         box-shadow:
-            0 18px 35px rgba(0,0,0,0.14),
-            0 8px 18px rgba(212,175,55,0.18);
+            0 18px 35px rgba(0, 0, 0, 0.14),
+            0 8px 18px rgba(212, 175, 55, 0.18);
     }
 
     .card-avaliacao:hover::before {
@@ -738,21 +803,19 @@ footer{
         transform: translateY(0) scale(1);
         filter: blur(0);
         box-shadow:
-            0 10px 25px rgba(0,0,0,0.12),
-            0 4px 12px rgba(0,0,0,0.08);
+            0 10px 25px rgba(0, 0, 0, 0.12),
+            0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     /* visual estilo notificação */
     .card-avaliacao {
         border-radius: 18px;
-        background: linear-gradient(
-            135deg,
-            rgba(255,255,255,0.96),
-            rgba(248,248,248,0.98)
-        );
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.96),
+                rgba(248, 248, 248, 0.98));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.55);
+        border: 1px solid rgba(255, 255, 255, 0.55);
     }
 
     /* efeito pulse curto quando aparece */
@@ -764,11 +827,9 @@ footer{
         pointer-events: none;
         animation: notificationGlow 0.8s ease;
         background:
-            radial-gradient(
-                circle at top right,
-                rgba(212,175,55,0.18),
-                transparent 45%
-            );
+            radial-gradient(circle at top right,
+                rgba(212, 175, 55, 0.18),
+                transparent 45%);
     }
 
     @keyframes notificationGlow {
@@ -776,9 +837,11 @@ footer{
             opacity: 0;
             transform: scale(0.96);
         }
+
         40% {
             opacity: 1;
         }
+
         100% {
             opacity: 0;
             transform: scale(1.02);
@@ -786,11 +849,55 @@ footer{
     }
 
     /* atraso progressivo estilo várias notificações */
-    .card-avaliacao:nth-child(1) { transition-delay: 0.05s; }
-    .card-avaliacao:nth-child(2) { transition-delay: 0.12s; }
-    .card-avaliacao:nth-child(3) { transition-delay: 0.18s; }
-    .card-avaliacao:nth-child(4) { transition-delay: 0.24s; }
-    .card-avaliacao:nth-child(5) { transition-delay: 0.30s; }
-    .card-avaliacao:nth-child(6) { transition-delay: 0.36s; }
+    .card-avaliacao:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    .card-avaliacao:nth-child(2) {
+        transition-delay: 0.12s;
+    }
+
+    .card-avaliacao:nth-child(3) {
+        transition-delay: 0.18s;
+    }
+
+    .card-avaliacao:nth-child(4) {
+        transition-delay: 0.24s;
+    }
+
+    .card-avaliacao:nth-child(5) {
+        transition-delay: 0.30s;
+    }
+
+    .card-avaliacao:nth-child(6) {
+        transition-delay: 0.36s;
+    }
+
+    /* =========================
+   ANIMAÇÃO: MINIATURAS VOANDO (Sincronizado com Carrossel)
+   ========================= */
+
+    /* Transição base suave para quando o JavaScript adiciona/remove a classe */
+    .quarto-img-thumb {
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    /* Classe acionada pelo JavaScript durante a troca de slide.
+   No Desktop: As miniaturas encolhem um pouco e vão para a ESQUERDA (direção da foto maior).
+*/
+    .animating-thumbs .quarto-img-thumb {
+        opacity: 0 !important;
+        transform: translateX(-60px) scale(0.9);
+    }
+
+    /* Ajuste Mobile: Quando a tela é menor que 991px, a foto grande fica no topo.
+   Então, mudamos a animação para as miniaturas irem para CIMA.
+*/
+    @media (max-width: 991px) {
+        .animating-thumbs .quarto-img-thumb {
+            transform: translateY(-50px) scale(0.9);
+            /* Vai para CIMA */
+        }
+    }
 
 }
