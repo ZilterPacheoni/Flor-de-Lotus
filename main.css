@@ -35,6 +35,10 @@ body{
     padding-bottom: 10px;
 }
 
+#sobre-a-pousada {
+    scroll-margin-top: 90px;
+}
+
 header img{
     width: 220px;
     object-fit: contain;
@@ -136,14 +140,19 @@ header img:hover{
 
 .foto-sobre-pousada{
     width: 100%;
-    max-width: 420px;
-    height: 480px;
+    height: 520px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
     border-radius: 22px;
     padding: 6px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(200,169,107,0.45));
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.9),
+        rgba(200,169,107,0.45)
+    );
+
     box-shadow: 0 18px 38px rgba(0,0,0,0.16);
     border: 1px solid rgba(200,169,107,0.35);
 }
@@ -160,6 +169,7 @@ header img:hover{
 
 /* MOBILE */
 @media (max-width: 767px){
+
     .foto-sobre-pousada{
         max-width: 92%;
         height: 220px;
@@ -229,6 +239,14 @@ img:hover{
     object-fit: cover;
     border-radius: 22px;
     box-shadow: var(--sombra);
+}
+
+.quarto-mobile-img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
 /* RESERVA */
@@ -393,4 +411,42 @@ footer{
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* AJUSTE DESKTOP - PRAIAS */
+@media (min-width: 992px){
+
+    #praias .tab-content{
+        padding-top: 70px;
+    }
+
+}
+
+.carousel-quarto-desktop {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.quarto-img-desktop {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.carousel-quarto-desktop .carousel-control-prev,
+.carousel-quarto-desktop .carousel-control-next {
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-quarto-desktop .carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-quarto-desktop .carousel-control-next {
+    right: 80px;
 }
