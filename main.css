@@ -502,42 +502,43 @@ footer {
 /* AJUSTES PARA CELULAR E TABLET */
 @media (max-width: 991px) {
     .quarto-gallery {
-        flex-direction: column;
-        height: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important; /* Espaço uniforme entre a foto grande e as pequenas */
+        height: auto !important;
     }
 
     .img-main-container {
-        height: 250px;
-        width: 100%;
+        width: 100% !important;
+        height: 250px !important; /* Altura fixa e padrão para a foto grande */
+        margin-bottom: 0 !important;
+    }
+
+    /* Força o carrossel a não ultrapassar a altura no mobile */
+    .img-main-container .carousel-inner,
+    .img-main-container .carousel-item {
+        height: 100% !important;
+    }
+
+    .quarto-img-main {
+        height: 100% !important;
+        object-fit: cover !important;
     }
 
     .img-thumbs-container {
-        flex-direction: row;
-        /* Miniaturas ficam lado a lado */
-        height: 110px;
-        width: 100%;
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px !important; /* Espaço exato entre as duas miniaturas */
+        width: 100% !important;
+        height: 120px !important; /* Força a altura máxima da linha de miniaturas */
+        margin-top: 0 !important;
     }
 
     .quarto-img-thumb {
-        height: 100%;
-        width: calc(50% - 6px);
-        /* Duas fotos dividindo a largura */
-    }
-}
-
-.mapa-container {
-    display: flex;
-    justify-content: center;
-}
-
-.mapa-container iframe {
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-@media (max-width: 768px) {
-    .mapa-container iframe {
-        height: 300px;
+        flex: 1 !important; /* Faz com que as duas imagens dividam o espaço 50/50 automaticamente */
+        width: 100% !important;
+        height: 120px !important; /* Impede a imagem vertical de crescer e quebrar o layout */
+        object-fit: cover !important; /* Faz o recorte inteligente para não esmagar a foto */
     }
 }
 
@@ -1064,90 +1065,156 @@ footer {
     transform: translateY(-50%);
 }
 
-/* Responsividade Mobile/Tablet */
-@media (max-width: 991px) {
-    .lazer-img-item {
-        width: 280px;
-        height: 380px;
-    }
-
-    .lazer-texts-wrapper {
-        top: 75%;
-        left: 50%;
-        width: 90vw;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-
-    .lazer-text-item {
-        /* No mobile, colocamos um fundo de vidro desfocado para ler bem o texto por cima das fotos */
-        background: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: var(--sombra);
-    }
-
-    .lazer-text-item h3 {
-        font-size: 1.5rem !important;
-    }
-
-    .lazer-text-item p {
-        font-size: 1rem !important;
-    }
-
-    .lazer-wave-divider {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
-        /* Inverte a onda para ela apontar para baixo */
-        z-index: 50;
-        /* Garante que fica por cima das fotos e textos */
-    }
-
-    .lazer-wave-divider svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 70px;
-        /* Podes aumentar ou diminuir a "altura" da onda aqui */
-    }
+/* =========================
+   ÁREA DE LAZER (INTERAÇÃO HOVER/CLICK)
+   ========================= */
+#area-de-lazer {
+    background-color: var(--bege) !important;
+    padding-top: 80px !important;
+    padding-bottom: 140px !important; /* 👈 O SEGREDO ESTÁ AQUI: Espaço generoso para a onda não tocar nos cartões! */
+    position: relative;
 }
 
-/* =========================
-   ONDAS DA ÁREA DE LAZER (FIXAS)
-   ========================= */
+#area-de-lazer .container {
+    position: relative;
+    z-index: 10; 
+}
 
-.lazer-wave-top,
+.lazer-click-card {
+    position: relative;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--branco);
+    transition: height 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
+}
+
+.lazer-click-card img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* --- OVERLAY DE HOVER (BLUR) --- */
+.lazer-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 60, 77, 0.4); /* Azul escuro com transparência */
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+/* O blur e o texto só aparecem se o cartão NÃO estiver aberto */
+.lazer-click-card:not(.is-open):hover .lazer-hover-overlay {
+    opacity: 1;
+}
+
+.lazer-hover-overlay span {
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transform: translateY(15px);
+    transition: transform 0.3s ease;
+}
+
+.lazer-click-card:not(.is-open):hover .lazer-hover-overlay span {
+    transform: translateY(0);
+}
+
+/* --- TEXTO E EXPANSÃO --- */
+.lazer-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 20px 25px;
+    background: linear-gradient(to top, rgba(31,60,77, 0.95) 15%, transparent 100%);
+    z-index: 10;
+    transition: background 0.5s ease;
+}
+
+.lazer-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* --- ESTADO ABERTO (CLICK) --- */
+.lazer-click-card.is-open {
+    height: 480px; /* Cartão estica ao clicar! */
+    cursor: default;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.lazer-click-card.is-open .lazer-card-content {
+    background: rgba(31,60,77, 0.92); /* Fundo sólido para ler o texto */
+    padding-top: 25px;
+}
+
+.lazer-click-card.is-open .lazer-description {
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* Botão Fechar no topo direito */
+.btn-close-card {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.25);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: none;
+    z-index: 20;
+    backdrop-filter: blur(5px);
+}
+
+.lazer-click-card.is-open .btn-close-card {
+    display: block;
+}
+
+.btn-close-card:hover {
+    background: var(--dourado);
+}
+
+/* --- ONDA FINAL (ÁREA DE LAZER) --- */
 .lazer-wave-bottom {
     position: absolute;
+    bottom: -1px; /* Oculta aquela linhazinha fina indesejada */
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    z-index: 50; /* Por cima das fotos e textos */
+    /* REMOVEMOS O ROTATE(180DEG) DAQUI! A base reta agora fica no fundo. */
+    z-index: 1; 
 }
 
-.lazer-wave-top {
-    top: 0;
-}
-
-.lazer-wave-bottom {
-    bottom: 0;
-}
-
-.lazer-wave-top svg,
 .lazer-wave-bottom svg {
     display: block;
     width: calc(100% + 1.3px);
-    height: 60px; /* Altura sutil para as ondas */
+    height: 60px; 
 }
 
-/* Ajuste de profundidade para garantir que o título não fique atrás da onda */
-.lazer-title-container {
-    z-index: 60;
+/* =========================
+   MAPA E CONTATOS UNIFICADO
+   ========================= */
+.mapa-container iframe {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 991px) {
+    .mapa-container iframe {
+        height: 350px !important;
+        min-height: 350px !important;
+    }
 }

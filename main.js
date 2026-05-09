@@ -465,109 +465,63 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* =========================
-   GSAP SCROLL: ÁREA DE LAZER (CORRIGIDO: CABEÇALHO + ALTURA + LARGURA)
+   ÁREA DE LAZER: ENTRADA (MOTION) + CLIQUE
    ========================= */
-
 document.addEventListener("DOMContentLoaded", function () {
+    
+    // 1. Animação de Entrada estilo Framer Motion
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        let mm = gsap.matchMedia();
-
-        // --- DESKTOP ---
-        mm.add("(min-width: 992px)", () => {
-            
-            gsap.set("#lazer-img-1", { xPercent: -50, yPercent: -50, x: -380, rotation: -4, width: "340px", height: "480px" });
-            gsap.set("#lazer-img-2", { xPercent: -50, yPercent: -50, x: 0, rotation: 0, width: "340px", height: "480px" });
-            gsap.set("#lazer-img-3", { xPercent: -50, yPercent: -50, x: 380, rotation: 4, width: "340px", height: "480px" });
-            
-            gsap.set(".lazer-text-item", { yPercent: -50, autoAlpha: 0, x: 50 });
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".lazer-scroll-container",
-                    start: "top -6% px",
-                    end: "+=8000", 
-                    scrub: 1,      
-                    pin: true,     
-                }
-            });
-
-            // Fase 1: Sinuca abre (Aumentamos a ALTURA para 65vh)
-            tl.to("#lazer-img-1", { x: "-25vw", width: "45vw", height: "65vh", rotation: 0, duration: 2 }, "fase1")
-              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase1")
-              .to("#lazer-text-1", { autoAlpha: 1, x: 0, duration: 2 }, "fase1")
-              .to({}, {duration: 1.5}); 
-
-            // Retorno Fase 1
-            tl.to("#lazer-img-1", { x: -380, width: "340px", height: "480px", rotation: -4, duration: 2 }, "fase1_r")
-              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "fase1_r")
-              .to("#lazer-text-1", { autoAlpha: 0, x: -50, duration: 2 }, "fase1_r");
-
-            // Fase 2: Churrasqueira
-            tl.to("#lazer-img-2", { x: "-25vw", width: "45vw", height: "65vh", duration: 2 }, "fase2")
-              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase2")
-              .to("#lazer-text-2", { autoAlpha: 1, x: 0, duration: 2 }, "fase2")
-              .to({}, {duration: 1.5}); 
-
-            // Retorno Fase 2
-            tl.to("#lazer-img-2", { x: 0, width: "340px", height: "480px", duration: 2 }, "fase2_r")
-              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "fase2_r")
-              .to("#lazer-text-2", { autoAlpha: 0, x: -50, duration: 2 }, "fase2_r");
-
-            // Fase 3: Piscina
-            tl.to("#lazer-img-3", { x: "-25vw", width: "45vw", height: "65vh", rotation: 0, duration: 2 }, "fase3")
-              .to(["#lazer-img-1", "#lazer-img-2"], { autoAlpha: 0, duration: 2 }, "fase3")
-              .to("#lazer-text-3", { autoAlpha: 1, x: 0, duration: 2 }, "fase3")
-              .to({}, {duration: 1.5}); 
-        });
-
-        // --- MOBILE / TABLET ---
-        mm.add("(max-width: 991px)", () => {
-            
-            gsap.set("#lazer-img-1", { xPercent: -50, yPercent: -50, x: -40, rotation: -6, width: "280px", height: "380px" });
-            gsap.set("#lazer-img-2", { xPercent: -50, yPercent: -50, x: 0, rotation: 0, width: "280px", height: "380px" });
-            gsap.set("#lazer-img-3", { xPercent: -50, yPercent: -50, x: 40, rotation: 6, width: "280px", height: "380px" });
-            
-            gsap.set(".lazer-text-item", { yPercent: -50, autoAlpha: 0, y: 30, x: 0 });
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".lazer-scroll-container",
-                    start: "top 80px", // CORREÇÃO: Menu mobile
-                    end: "+=6000", 
-                    scrub: 1,
-                    pin: true,
-                }
-            });
-
-            // Fase 1
-            tl.to("#lazer-img-1", { y: "-22vh", width: "90vw", height: "45vh", rotation: 0, zIndex: 10, duration: 2 }, "fase1_m")
-              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase1_m")
-              .to("#lazer-text-1", { autoAlpha: 1, y: 0, duration: 2 }, "fase1_m")
-              .to({}, {duration: 1.5}); 
-
-            // Retorno 1
-            tl.to("#lazer-img-1", { y: 0, width: "280px", height: "380px", rotation: -6, zIndex: 1, duration: 2 }, "retorno1_m")
-              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "retorno1_m")
-              .to("#lazer-text-1", { autoAlpha: 0, y: -30, duration: 2 }, "retorno1_m");
-
-            // Fase 2
-            tl.to("#lazer-img-2", { y: "-22vh", width: "90vw", height: "45vh", zIndex: 10, duration: 2 }, "fase2_m")
-              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase2_m")
-              .to("#lazer-text-2", { autoAlpha: 1, y: 0, duration: 2 }, "fase2_m")
-              .to({}, {duration: 1.5}); 
-
-            // Retorno 2
-            tl.to("#lazer-img-2", { y: 0, width: "280px", height: "380px", zIndex: 1, duration: 2 }, "retorno2_m")
-              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "retorno2_m")
-              .to("#lazer-text-2", { autoAlpha: 0, y: -30, duration: 2 }, "retorno2_m");
-
-            // Fase 3
-            tl.to("#lazer-img-3", { y: "-22vh", width: "90vw", height: "45vh", rotation: 0, zIndex: 10, duration: 2 }, "fase3_m")
-              .to(["#lazer-img-1", "#lazer-img-2"], { autoAlpha: 0, duration: 2 }, "fase3_m")
-              .to("#lazer-text-3", { autoAlpha: 1, y: 0, duration: 2 }, "fase3_m")
-              .to({}, {duration: 1.5}); 
+        gsap.from(".lazer-click-card", {
+            y: 60,              
+            opacity: 0,         
+            duration: 0.8,        
+            stagger: 0.2,       
+            ease: "power2.out", 
+            scrollTrigger: {
+                trigger: "#area-de-lazer",
+                start: "top 80%", 
+                toggleActions: "play none none none"
+            }
         });
     }
+
+    // 2. Lógica do Clique para Expandir o Cartão
+    const lazerCards = document.querySelectorAll('.lazer-click-card');
+
+    lazerCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            
+            // Se clicar nas setas do carrossel ou no botão fechar, não faz o toggle da caixa
+            if(e.target.closest('.carousel-control-prev') || e.target.closest('.carousel-control-next') || e.target.closest('.btn-close-card')) {
+                return;
+            }
+
+            // Fecha os outros cartões se houver algum aberto
+            lazerCards.forEach(c => {
+                if (c !== this) {
+                    c.classList.remove('is-open');
+                    // Esconde os controlos do carrossel dos outros
+                    c.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(btn => btn.classList.add('d-none'));
+                }
+            });
+
+            // Abre este cartão
+            this.classList.add('is-open');
+            
+            // Mostra as setas do carrossel apenas quando o cartão está aberto
+            this.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(btn => btn.classList.remove('d-none'));
+        });
+    });
+
+    // 3. Botão para fechar o cartão
+    document.querySelectorAll('.btn-close-card').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evita que o clique reabra o cartão
+            const card = this.closest('.lazer-click-card');
+            card.classList.remove('is-open');
+            card.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(b => b.classList.add('d-none'));
+        });
+    });
 });
