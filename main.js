@@ -416,10 +416,9 @@ function enviarReservaQuartos() {
 }
 
 /* =========================
-   SINCRONIZAÇÃO E ANIMAÇÃO DAS MINIATURAS
+   SINCRONIZAÇÃO E ANIMAÇÃO DAS MINIATURAS (EFEITO DESLIZE)
    ========================= */
 document.addEventListener('DOMContentLoaded', function () {
-    // Seleciona todas as galerias de quartos da página
     const galleries = document.querySelectorAll('.quarto-gallery');
 
     galleries.forEach(gallery => {
@@ -427,32 +426,148 @@ document.addEventListener('DOMContentLoaded', function () {
         const thumbsContainer = gallery.querySelector('.img-thumbs-container');
         const thumbs = thumbsContainer.querySelectorAll('.quarto-img-thumb');
         
-        // Se a secção não tiver carrossel ou miniaturas, ignora
         if (!carouselElement || thumbs.length === 0) return;
 
-        // Captura todas as imagens do carrossel numa lista (array)
         const carouselItems = carouselElement.querySelectorAll('.carousel-item img');
         const images = Array.from(carouselItems).map(img => img.src);
 
-        // Evento disparado pelo Bootstrap SEMPRE que o carrossel muda (automático ou clique nas setas)
         carouselElement.addEventListener('slide.bs.carousel', function (e) {
-            const nextIndex = e.to; // O índice da próxima imagem que vai aparecer (0, 1 ou 2)
-
-            // Lógica de Rotação Cíclica: Se a principal for a 0, as minis são a 1 e 2, etc.
+            const nextIndex = e.to; 
+            
             const thumb1Index = (nextIndex + 1) % images.length;
             const thumb2Index = (nextIndex + 2) % images.length;
 
-            // 1. Adiciona a classe que faz o efeito visual das miniaturas "voarem"
-            thumbsContainer.classList.add('animating-thumbs');
+            // 1. Inicia a animação das duas miniaturas
+            thumbs[0].classList.add('animate-thumb-1');
+            thumbs[1].classList.add('animate-thumb-2');
 
-            // 2. Aguarda 300 milissegundos (o tempo do CSS) para trocar a imagem "escondida"
+            // 2. Espera a animação quase terminar (380ms) para fazer a troca
             setTimeout(() => {
+                // Troca os links (src) das imagens
                 thumbs[0].src = images[thumb1Index];
                 thumbs[1].src = images[thumb2Index];
 
-                // 3. Remove a classe, fazendo as novas imagens voltarem para o lugar suavemente
-                thumbsContainer.classList.remove('animating-thumbs');
-            }, 300);
+                // Remove as animações de movimento (para voltarem à grelha original)
+                thumbs[0].classList.remove('animate-thumb-1');
+                thumbs[1].classList.remove('animate-thumb-2');
+
+                // 3. Adiciona um efeito de "surgimento" suave na nova miniatura que entra
+                thumbs[1].classList.add('fade-in-thumb');
+                
+                // Limpa a animação de surgimento após terminar
+                setTimeout(() => {
+                    thumbs[1].classList.remove('fade-in-thumb');
+                }, 400);
+
+            }, 380);
         });
     });
+});
+
+/* =========================
+   GSAP SCROLL: ÁREA DE LAZER (CORRIGIDO: CABEÇALHO + ALTURA + LARGURA)
+   ========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        let mm = gsap.matchMedia();
+
+        // --- DESKTOP ---
+        mm.add("(min-width: 992px)", () => {
+            
+            gsap.set("#lazer-img-1", { xPercent: -50, yPercent: -50, x: -380, rotation: -4, width: "340px", height: "480px" });
+            gsap.set("#lazer-img-2", { xPercent: -50, yPercent: -50, x: 0, rotation: 0, width: "340px", height: "480px" });
+            gsap.set("#lazer-img-3", { xPercent: -50, yPercent: -50, x: 380, rotation: 4, width: "340px", height: "480px" });
+            
+            gsap.set(".lazer-text-item", { yPercent: -50, autoAlpha: 0, x: 50 });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".lazer-scroll-container",
+                    start: "top -6% px",
+                    end: "+=8000", 
+                    scrub: 1,      
+                    pin: true,     
+                }
+            });
+
+            // Fase 1: Sinuca abre (Aumentamos a ALTURA para 65vh)
+            tl.to("#lazer-img-1", { x: "-25vw", width: "45vw", height: "65vh", rotation: 0, duration: 2 }, "fase1")
+              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase1")
+              .to("#lazer-text-1", { autoAlpha: 1, x: 0, duration: 2 }, "fase1")
+              .to({}, {duration: 1.5}); 
+
+            // Retorno Fase 1
+            tl.to("#lazer-img-1", { x: -380, width: "340px", height: "480px", rotation: -4, duration: 2 }, "fase1_r")
+              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "fase1_r")
+              .to("#lazer-text-1", { autoAlpha: 0, x: -50, duration: 2 }, "fase1_r");
+
+            // Fase 2: Churrasqueira
+            tl.to("#lazer-img-2", { x: "-25vw", width: "45vw", height: "65vh", duration: 2 }, "fase2")
+              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase2")
+              .to("#lazer-text-2", { autoAlpha: 1, x: 0, duration: 2 }, "fase2")
+              .to({}, {duration: 1.5}); 
+
+            // Retorno Fase 2
+            tl.to("#lazer-img-2", { x: 0, width: "340px", height: "480px", duration: 2 }, "fase2_r")
+              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "fase2_r")
+              .to("#lazer-text-2", { autoAlpha: 0, x: -50, duration: 2 }, "fase2_r");
+
+            // Fase 3: Piscina
+            tl.to("#lazer-img-3", { x: "-25vw", width: "45vw", height: "65vh", rotation: 0, duration: 2 }, "fase3")
+              .to(["#lazer-img-1", "#lazer-img-2"], { autoAlpha: 0, duration: 2 }, "fase3")
+              .to("#lazer-text-3", { autoAlpha: 1, x: 0, duration: 2 }, "fase3")
+              .to({}, {duration: 1.5}); 
+        });
+
+        // --- MOBILE / TABLET ---
+        mm.add("(max-width: 991px)", () => {
+            
+            gsap.set("#lazer-img-1", { xPercent: -50, yPercent: -50, x: -40, rotation: -6, width: "280px", height: "380px" });
+            gsap.set("#lazer-img-2", { xPercent: -50, yPercent: -50, x: 0, rotation: 0, width: "280px", height: "380px" });
+            gsap.set("#lazer-img-3", { xPercent: -50, yPercent: -50, x: 40, rotation: 6, width: "280px", height: "380px" });
+            
+            gsap.set(".lazer-text-item", { yPercent: -50, autoAlpha: 0, y: 30, x: 0 });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".lazer-scroll-container",
+                    start: "top 80px", // CORREÇÃO: Menu mobile
+                    end: "+=6000", 
+                    scrub: 1,
+                    pin: true,
+                }
+            });
+
+            // Fase 1
+            tl.to("#lazer-img-1", { y: "-22vh", width: "90vw", height: "45vh", rotation: 0, zIndex: 10, duration: 2 }, "fase1_m")
+              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase1_m")
+              .to("#lazer-text-1", { autoAlpha: 1, y: 0, duration: 2 }, "fase1_m")
+              .to({}, {duration: 1.5}); 
+
+            // Retorno 1
+            tl.to("#lazer-img-1", { y: 0, width: "280px", height: "380px", rotation: -6, zIndex: 1, duration: 2 }, "retorno1_m")
+              .to(["#lazer-img-2", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "retorno1_m")
+              .to("#lazer-text-1", { autoAlpha: 0, y: -30, duration: 2 }, "retorno1_m");
+
+            // Fase 2
+            tl.to("#lazer-img-2", { y: "-22vh", width: "90vw", height: "45vh", zIndex: 10, duration: 2 }, "fase2_m")
+              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 0, duration: 2 }, "fase2_m")
+              .to("#lazer-text-2", { autoAlpha: 1, y: 0, duration: 2 }, "fase2_m")
+              .to({}, {duration: 1.5}); 
+
+            // Retorno 2
+            tl.to("#lazer-img-2", { y: 0, width: "280px", height: "380px", zIndex: 1, duration: 2 }, "retorno2_m")
+              .to(["#lazer-img-1", "#lazer-img-3"], { autoAlpha: 1, duration: 2 }, "retorno2_m")
+              .to("#lazer-text-2", { autoAlpha: 0, y: -30, duration: 2 }, "retorno2_m");
+
+            // Fase 3
+            tl.to("#lazer-img-3", { y: "-22vh", width: "90vw", height: "45vh", rotation: 0, zIndex: 10, duration: 2 }, "fase3_m")
+              .to(["#lazer-img-1", "#lazer-img-2"], { autoAlpha: 0, duration: 2 }, "fase3_m")
+              .to("#lazer-text-3", { autoAlpha: 1, y: 0, duration: 2 }, "fase3_m")
+              .to({}, {duration: 1.5}); 
+        });
+    }
 });

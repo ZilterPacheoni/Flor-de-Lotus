@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./main.css">
     <link rel="icon" type="image" href="img Pousada/flordelotuslogo.png">
-    
+
 </head>
 
 <body>
@@ -157,156 +157,222 @@
             </div>
         </section>
 
-        <section id="quartos" class="pt-5 pb-5">
-            <div class="container">
-                <div class="row mb-5">
+        <section id="quartos" class="pt-5">
+            <div class="container mb-5">
+                <div class="row">
                     <h2 class="section-tittle text-center">Nossos <span>Quartos</span></h2>
                     <p class="text-center text-muted">Conheça nossas acomodações e escolha o seu refúgio perfeito.</p>
                 </div>
+            </div>
 
-                <div class="row align-items-center mb-5">
-                    <div class="col-lg-5 mb-4 mb-lg-0">
-                        <div class="quarto-gallery">
-                            
-                            <div id="carousel-duplo" class="carousel slide carousel-fade img-main-container" data-bs-ride="carousel" data-bs-interval="3500">
-                                <div class="carousel-inner h-100">
-                                    <div class="carousel-item active h-100">
-                                        <img src="img casal/casal.jpg" class="quarto-img-main d-block w-100" alt="Quarto Duplo" onclick="openLightbox(this.src)">
+            <div class="quarto-wrapper position-relative" style="background-color: #F5EBDD; padding: 60px 0 0 0;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 mb-4 mb-lg-0">
+                            <div class="quarto-gallery">
+                                <div id="carousel-duplo" class="carousel slide carousel-fade img-main-container"
+                                    data-bs-ride="carousel" data-bs-interval="3500">
+                                    <div class="carousel-inner h-100">
+                                        <div class="carousel-item active h-100">
+                                            <img src="img casal/casal.jpg" class="quarto-img-main d-block w-100"
+                                                alt="Quarto Duplo" onclick="openLightbox(this.src)">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="img casal/casal1.jpg" class="quarto-img-main d-block w-100"
+                                                alt="Quarto Duplo" onclick="openLightbox(this.src)">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="img casal/casal2.jpg" class="quarto-img-main d-block w-100"
+                                                alt="Quarto Duplo" onclick="openLightbox(this.src)">
+                                        </div>
                                     </div>
-                                    <div class="carousel-item h-100">
-                                        <img src="img casal/casal1.jpg" class="quarto-img-main d-block w-100" alt="Quarto Duplo" onclick="openLightbox(this.src)">
-                                    </div>
-                                    <div class="carousel-item h-100">
-                                        <img src="img casal/casal2.jpg" class="quarto-img-main d-block w-100" alt="Quarto Duplo" onclick="openLightbox(this.src)">
-                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-duplo"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-duplo"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </button>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-duplo" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-duplo" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </button>
-                            </div>
 
-                            <div class="img-thumbs-container">
-                                <img src="img casal/casal1.jpg" class="quarto-img-thumb" alt="Detalhe 1" onclick="openLightbox(this.src)">
-                                <img src="img casal/casal2.jpg" class="quarto-img-thumb" alt="Detalhe 2" onclick="openLightbox(this.src)">
+                                <div class="img-thumbs-container">
+                                    <img src="img casal/casal1.jpg" class="quarto-img-thumb" alt="Detalhe 1"
+                                        onclick="openLightbox(this.src)">
+                                    <img src="img casal/casal2.jpg" class="quarto-img-thumb" alt="Detalhe 2"
+                                        onclick="openLightbox(this.src)">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-7 ps-lg-5">
-                        <h3 class="text-colored fs-3">Duplo Twin</h3>
-                        <p>Perfeito para amigos ou casais que buscam praticidade. Este quarto oferece o conforto essencial com um toque de charme baiano, garantindo noites tranquilas após um longo dia de praia e passeios em Itacaré.</p>
-                        
-                        <h5 class="mt-4 fs-6 fw-bold">O que este quarto oferece:</h5>
-                        <ul class="quarto-amenities">
-                            <li><i class="bi bi-wifi"></i> Wi-Fi de alta velocidade</li>
-                            <li><i class="bi bi-tv"></i> Smart TV com acesso a streaming</li>
-                            <li><i class="bi bi-snow"></i> Ar-condicionado Split silencioso</li>
-                            <li><i class="bi bi-door-open"></i> Varanda privativa com rede</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="col-lg-7 ps-lg-5">
+                            <h3 class="text-colored fs-3">Duplo Twin</h3>
+                            <p>Perfeito para amigos ou casais que buscam praticidade. Este quarto oferece o conforto
+                                essencial com um toque de charme baiano, garantindo noites tranquilas após um longo dia
+                                de praia e passeios em Itacaré.</p>
 
-                <div class="row align-items-center mb-5">
-                    <div class="col-lg-7 pe-lg-5 order-2 order-lg-1">
-                        <h3 class="text-colored fs-3 text-lg-end">Quarto Triplo</h3>
-                        <p class="text-lg-end">Acomodação espaçosa ideal para pequenos grupos ou famílias. Desfrute de um ambiente arejado e bem iluminado, decorado para proporcionar a máxima sensação de relaxamento e acolhimento.</p>
-                        
-                        <div class="d-flex flex-column align-items-lg-end mt-4">
-                            <h5 class="fs-6 fw-bold">O que este quarto oferece:</h5>
-                            <ul class="quarto-amenities text-lg-end">
+                            <h5 class="mt-4 fs-6 fw-bold">O que este quarto oferece:</h5>
+                            <ul class="quarto-amenities">
                                 <li><i class="bi bi-wifi"></i> Wi-Fi de alta velocidade</li>
-                                <li><i class="bi bi-tv"></i> Smart TV de ecrã plano</li>
-                                <li><i class="bi bi-snow"></i> Ar-condicionado Split</li>
-                                <li><i class="bi bi-cup-hot"></i> Frigobar abastecido</li>
+                                <li><i class="bi bi-tv"></i> Smart TV com acesso a streaming</li>
+                                <li><i class="bi bi-snow"></i> Ar-condicionado Split silencioso</li>
+                                <li><i class="bi bi-door-open"></i> Varanda privativa com rede</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-5 mb-4 mb-lg-0 order-1 order-lg-2">
-                        <div class="quarto-gallery">
-                            
-                            <div id="carousel-triplo" class="carousel slide carousel-fade img-main-container" data-bs-ride="carousel" data-bs-interval="3500">
-                                <div class="carousel-inner h-100">
-                                    <div class="carousel-item active h-100">
-                                        <img src="./img Pousada/quartotriplo.jpg" class="quarto-img-main d-block w-100" alt="Quarto Triplo" onclick="openLightbox(this.src)">
-                                    </div>
-                                    <div class="carousel-item h-100">
-                                        <img src="img casal/triplo.jpg" class="quarto-img-main d-block w-100" alt="Quarto Triplo" onclick="openLightbox(this.src)">
-                                    </div>
-                                    <div class="carousel-item h-100">
-                                        <img src="img casal/triplo1.jpg" class="quarto-img-main d-block w-100" alt="Quarto Triplo" onclick="openLightbox(this.src)">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-triplo" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-triplo" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </button>
-                            </div>
+                </div>
 
-                            <div class="img-thumbs-container">
-                                <img src="img casal/triplo.jpg" class="quarto-img-thumb" alt="Detalhe 1" onclick="openLightbox(this.src)">
-                                <img src="img casal/triplo1.jpg" class="quarto-img-thumb" alt="Detalhe 2" onclick="openLightbox(this.src)">
+                <div class="wave-divider" style="margin-top: 50px;">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                        preserveAspectRatio="none" style="width: 100%; height: 60px; display: block;">
+                        <path
+                            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                            style="fill: #F9F9F7;"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="quarto-wrapper position-relative" style="background-color: #F9F9F7; padding: 60px 0 0 0;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 pe-lg-5 order-2 order-lg-1">
+                            <h3 class="text-colored fs-3 text-lg-end">Quarto Triplo</h3>
+                            <p class="text-lg-end">Acomodação espaçosa ideal para pequenos grupos ou famílias. Desfrute
+                                de um ambiente arejado e bem iluminado, decorado para proporcionar a máxima sensação de
+                                relaxamento e acolhimento.</p>
+
+                            <div class="d-flex flex-column align-items-lg-end mt-4">
+                                <h5 class="fs-6 fw-bold">O que este quarto oferece:</h5>
+                                <ul class="quarto-amenities text-lg-end">
+                                    <li><i class="bi bi-wifi"></i> Wi-Fi de alta velocidade</li>
+                                    <li><i class="bi bi-tv"></i> Smart TV de ecrã plano</li>
+                                    <li><i class="bi bi-snow"></i> Ar-condicionado Split</li>
+                                    <li><i class="bi bi-cup-hot"></i> Frigobar abastecido</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-4 mb-lg-0 order-1 order-lg-2">
+                            <div class="quarto-gallery">
+                                <div id="carousel-triplo" class="carousel slide carousel-fade img-main-container"
+                                    data-bs-ride="carousel" data-bs-interval="3500">
+                                    <div class="carousel-inner h-100">
+                                        <div class="carousel-item active h-100">
+                                            <img src="./img Pousada/quartotriplo.jpg"
+                                                class="quarto-img-main d-block w-100" alt="Quarto Triplo"
+                                                onclick="openLightbox(this.src)">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="img casal/triplo.jpg" class="quarto-img-main d-block w-100"
+                                                alt="Quarto Triplo" onclick="openLightbox(this.src)">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="img casal/triplo1.jpg" class="quarto-img-main d-block w-100"
+                                                alt="Quarto Triplo" onclick="openLightbox(this.src)">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carousel-triplo" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carousel-triplo" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+
+                                <div class="img-thumbs-container">
+                                    <img src="img casal/triplo.jpg" class="quarto-img-thumb" alt="Detalhe 1"
+                                        onclick="openLightbox(this.src)">
+                                    <img src="img casal/triplo1.jpg" class="quarto-img-thumb" alt="Detalhe 2"
+                                        onclick="openLightbox(this.src)">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row align-items-center mb-5">
-                    <div class="col-lg-5 mb-4 mb-lg-0">
-                        <div class="quarto-gallery">
-                            
-                            <div id="carousel-familia" class="carousel slide carousel-fade img-main-container" data-bs-ride="carousel" data-bs-interval="3500">
-                                <div class="carousel-inner h-100">
-                                    <div class="carousel-item active h-100">
-                                        <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-main d-block w-100" alt="Quarto Família" onclick="openLightbox(this.src)">
-                                    </div>
-                                    <div class="carousel-item h-100">
-                                        <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-main d-block w-100" alt="Quarto Família" onclick="openLightbox(this.src)">
-                                    </div>
-                                    <div class="carousel-item h-100">
-                                        <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-main d-block w-100" alt="Quarto Família" onclick="openLightbox(this.src)">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-familia" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-familia" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </button>
-                            </div>
+                <div class="wave-divider" style="margin-top: 50px;">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                        preserveAspectRatio="none"
+                        style="width: 100%; height: 60px; display: block; transform: rotate(180deg);">
+                        <path
+                            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                            style="fill: #F5EBDD;"></path>
+                    </svg>
+                </div>
+            </div>
 
-                            <div class="img-thumbs-container">
-                                <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-thumb" alt="Detalhe 1" onclick="openLightbox(this.src)">
-                                <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-thumb" alt="Detalhe 2" onclick="openLightbox(this.src)">
+            <div class="quarto-wrapper position-relative" style="background-color: #F5EBDD; padding: 60px 0;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 mb-4 mb-lg-0">
+                            <div class="quarto-gallery">
+                                <div id="carousel-familia" class="carousel slide carousel-fade img-main-container"
+                                    data-bs-ride="carousel" data-bs-interval="3500">
+                                    <div class="carousel-inner h-100">
+                                        <div class="carousel-item active h-100">
+                                            <img src="./img Pousada/FlordeLotus8.jpg"
+                                                class="quarto-img-main d-block w-100" alt="Quarto Família"
+                                                onclick="openLightbox(this.src)">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="./img Pousada/FlordeLotus8.jpg"
+                                                class="quarto-img-main d-block w-100" alt="Quarto Família"
+                                                onclick="openLightbox(this.src)">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="./img Pousada/FlordeLotus8.jpg"
+                                                class="quarto-img-main d-block w-100" alt="Quarto Família"
+                                                onclick="openLightbox(this.src)">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carousel-familia" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carousel-familia" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+
+                                <div class="img-thumbs-container">
+                                    <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-thumb" alt="Detalhe 1"
+                                        onclick="openLightbox(this.src)">
+                                    <img src="./img Pousada/FlordeLotus8.jpg" class="quarto-img-thumb" alt="Detalhe 2"
+                                        onclick="openLightbox(this.src)">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-7 ps-lg-5">
-                        <h3 class="text-colored fs-3">Quarto Família</h3>
-                        <p>A melhor escolha para quem viaja com toda a família. Amplo espaço interno garantindo conforto para adultos e crianças, com todas as comodidades necessárias para se sentirem em casa.</p>
-                        
-                        <h5 class="mt-4 fs-6 fw-bold">O que este quarto oferece:</h5>
-                        <ul class="quarto-amenities">
-                            <li><i class="bi bi-wifi"></i> Wi-Fi de alta velocidade</li>
-                            <li><i class="bi bi-tv"></i> Smart TV com canais infantis</li>
-                            <li><i class="bi bi-snow"></i> Ar-condicionado Split potente</li>
-                            <li><i class="bi bi-shield-check"></i> Cofre eletrônico</li>
-                        </ul>
+                        <div class="col-lg-7 ps-lg-5">
+                            <h3 class="text-colored fs-3">Quarto Família</h3>
+                            <p>A melhor escolha para quem viaja com toda a família. Amplo espaço interno garantindo
+                                conforto para adultos e crianças, com todas as comodidades necessárias para se sentirem
+                                em casa.</p>
+
+                            <h5 class="mt-4 fs-6 fw-bold">O que este quarto oferece:</h5>
+                            <ul class="quarto-amenities">
+                                <li><i class="bi bi-wifi"></i> Wi-Fi de alta velocidade</li>
+                                <li><i class="bi bi-tv"></i> Smart TV com canais infantis</li>
+                                <li><i class="bi bi-snow"></i> Ar-condicionado Split potente</li>
+                                <li><i class="bi bi-shield-check"></i> Cofre eletrônico</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="row mt-5 pt-4 border-top justify-content-center">
+            <div class="container mt-4 mb-5">
+                <div class="row pt-4 justify-content-center">
                     <div class="col-lg-10">
-                        <div class="reserva-box text-center">
-                            <h4 class="mb-4 text-colored"><i class="bi bi-calendar-check me-2"></i>Escolha seu quarto e faça sua reserva</h4>
-                            
+                        <div class="reserva-box text-center shadow-sm">
+                            <h4 class="mb-4 text-colored"><i class="bi bi-calendar-check me-2"></i>Escolha seu quarto e
+                                faça sua reserva</h4>
+
                             <form class="row g-3 justify-content-center align-items-end">
                                 <div class="col-md-4 text-start">
                                     <label class="form-label fw-bold">Selecione o Quarto:</label>
-                                    <select id="quarto-selecionado" class="form-select border-success">
+                                    <select id="quarto-selecionado"
+                                        class="form-select border-success campo-tamanho-igual">
                                         <option value="Duplo Twin" selected>Duplo Twin</option>
                                         <option value="Quarto Triplo">Quarto Triplo</option>
                                         <option value="Quarto Família">Quarto Família</option>
@@ -314,14 +380,17 @@
                                 </div>
                                 <div class="col-md-3 text-start">
                                     <label class="form-label fw-bold">Check-in:</label>
-                                    <input type="date" id="data-checkin-global" class="form-control border-success">
+                                    <input type="date" id="data-checkin-global"
+                                        class="form-control border-success campo-tamanho-igual">
                                 </div>
                                 <div class="col-md-3 text-start">
                                     <label class="form-label fw-bold">Check-out:</label>
-                                    <input type="date" id="data-checkout-global" class="form-control border-success">
+                                    <input type="date" id="data-checkout-global"
+                                        class="form-control border-success campo-tamanho-igual">
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="button" class="btn btn-success btn-reservar w-100" onclick="enviarReservaQuartos()">
+                                    <button type="button" class="btn btn-success btn-reservar w-100 btn-tamanho-igual"
+                                        onclick="enviarReservaQuartos()">
                                         <i class="bi bi-whatsapp"></i> Reservar
                                     </button>
                                 </div>
@@ -329,7 +398,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -337,512 +405,583 @@
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-body text-center position-relative p-0">
-                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1055; filter: invert(1); background-color: rgba(255,255,255,0.5); border-radius: 50%; padding: 10px;"></button>
-                        <img id="lightboxImage" src="" class="img-fluid rounded shadow-lg" alt="Imagem ampliada" style="max-height: 90vh; width: auto; object-fit: contain;">
+                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"
+                            style="z-index: 1055; filter: invert(1); background-color: rgba(255,255,255,0.5); border-radius: 50%; padding: 10px;"></button>
+                        <img id="lightboxImage" src="" class="img-fluid rounded shadow-lg" alt="Imagem ampliada"
+                            style="max-height: 90vh; width: auto; object-fit: contain;">
                     </div>
                 </div>
             </div>
         </div>
-        <section id="area-de-lazer" class="pt-1 pb-1">
-            <div class="container">
-                <div class="row">
-                    <h2 class="section-tittle text-center">Area de <span>Lazer</span></h2>
-                </div>
-                <div class="row mt-1">
-                    <div class="col-md-4">
-                        <img src="./img Pousada/FlordeLotus5.jpg" alt="Sinuca" class="d-block w-100 h-50 rounded mb-2">
-                        <h3 class="text-colored fs-5">Sinuca</h3>
-                        <p>
-                            Lorem ipsum dolor sit...
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="./img Pousada/FlordeLotus9.jpg" alt="Area de lazer"
-                            class="d-block w-100 h-50 rounded mb-2">
-                        <h3 class="text-colored fs-5">Área da churrasqueira</h3>
-                        <p>
-                            Lorem ipsum dolor sit...
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="./img Pousada/FlordeLotus6.jpg" alt="piscina" class="d-block w-100 h-50 rounded mb-2">
-                        <h3 class="text-colored fs-5">Piscina</h3>
-                        <p>
-                            Lorem ipsum dolor sit...
-                        </p>
-                    </div>
-                </div>
+
+<section id="area-de-lazer" class="lazer-scroll-container">
+
+            <div class="lazer-wave-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: #E8EAE2;"></path>
+                </svg>
             </div>
-        </section>
-        <section id="praias" class="pt-5 pb-5">
-            <div class="container">
-                <div class="row" id="topo-praias">
-                    <h2 class="section-tittle text-center mb-5">
-                        Praias de <span>Itacaré</span>
-                    </h2>
-                </div>
-                <div class="row">
-                    <div class="d-block d-md-none mb-4">
-                        <div class="praias-dropdown-box">
-                            <label for="praias-select" class="form-label fw-bold text-colored">
-                                Escolha a praia:
-                            </label>
-                            <select class="form-select praias-dropdown" id="praias-select">
-                                <option value="orla-de-itacare" selected>🌅 Orla de Itacaré</option>
-                                <option value="praia-da-concha">🏖️ Praia da Concha</option>
-                                <option value="praia-da-resende">🌊 Praia da Resende</option>
-                                <option value="praia-da-tiririca">🏄 Praia da Tiririca</option>
-                                <option value="praia-da-ribeira">🌴 Praia da Ribeira</option>
-                                <option value="praia-de-jeribucaçu">🌺 Praia de Jeribucaçu</option>
-                                <option value="praia-de-itacarezinho">☀️ Praia de Itacarezinho</option>
-                                <option value="cachoeira-do-tijuipe">🏞️ Cachoeira do Tijuípe</option>
-                                <option value="cachoeira-do-cleandro">🌿 Cachoeira do Cleandro</option>
-                            </select>
-                        </div>
-                    </div>
-                    <aside class="col-md-2 d-none d-md-block">
-                        <nav class="nav nav-pills flex-column nav-praias">
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#orla-de-itacare"
-                                class="fw-bold text-start nav-link text-colored active">
-                                Orla de Itacaré
-                            </button>
 
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-concha"
-                                class="fw-bold text-start nav-link text-colored">
-                                Praia da Concha
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-resende"
-                                class="fw-bold text-start nav-link text-colored">
-                                Praia da Resende
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-tiririca"
-                                class="fw-bold text-start nav-link text-colored">
-                                Praia da Tiririca
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-ribeira"
-                                class="fw-bold text-start nav-link text-colored">
-                                Praia da Ribeira
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#praia-de-jeribucaçu"
-                                class="fw-bold text-start nav-link text-colored">
-                                Praia de Jeribucaçu
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#praia-de-itacarezinho"
-                                class="fw-bold text-start nav-link text-colored">
-                                Praia de Itacarezinho
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#cachoeira-do-tijuipe"
-                                class="fw-bold text-start nav-link text-colored">
-                                Cachoeira do Tijuípe
-                            </button>
-
-                            <button type="button" data-bs-toggle="tab" data-bs-target="#cachoeira-do-cleandro"
-                                class="fw-bold text-start nav-link text-colored">
-                                Cachoeira do Cleandro</button>
-                        </nav>
-                    </aside>
-                    <div class="col-md-10">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="orla-de-itacare">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Orla/orla.jpg" alt="Orla com nascer do sol">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Orla/orla1.jpg" alt="Orla com nascer do sol">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Orla/orla2.jpg" alt="Orla com nascer do sol">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Orla/orla3.jpg" alt="Orla com nascer do sol">
-                                    </div>
-                                    <div class="text-center mt-4 d-md-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="praia-da-concha">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img concha/praiadaconcha1.jpg" alt="Praia da concha">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img concha/praiadaconcha2.jpg" alt="Praia da concha">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img concha/praiadaconcha3.jpg" alt="Praia da concha">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img concha/praiadaconcha4.jpg" alt="Praia da concha">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="praia-da-resende">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Resende/resende1.jpg" alt="Praia da Resende">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Resende/resende3.jpg" alt="Praia da Resende">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Resende/resende5.jpg" alt="Praia da Resende">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Resende/resende6.jpg" alt="Praia da Resende">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="praia-da-tiririca">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Tiririca/tiririca.jpg" alt="Praia da Resende">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Tiririca/tiririca1.jpg" alt="Praia da Resende">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Tiririca/tiririca3.jpg" alt="Praia da tiririca">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="praia-da-ribeira">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Ribeira/ribeira1.jpg" alt="Praia da Ribeira">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Ribeira/praiaribeira.jpg" alt="Praia da Ribeira">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="praia-de-jeribucaçu">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Jeribucaçu/jeribucaçu3.jpg" alt="Praia de Jeribucaçu">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Jeribucaçu/jeribucaçu4.jpg" alt="Praia de Jeribucaçu">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Jeribucaçu/jeribucaçu1.jpg" alt="Praia de Jeribucaçu">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Jeribucaçu/jeribucaçu2.jpg" alt="Praia de Jeribucaçu">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="praia-de-itacarezinho">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Itacarezinho/miranteitacarezinho1.jpg"
-                                            alt="Mirante de Itacarezinho">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Itacarezinho/itacarezinho.jpg" alt="Praia de Itacarezinho">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Itacarezinho/itacarezinho1.jpg" alt="Praia de Itacarezinho">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Itacarezinho/itacarezinho2.jpg" alt="Praia de Itacarezinho">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="cachoeira-do-tijuipe">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Tijuípe/tijuipe.jpg" alt="Cachoeira do Tijuípe">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Tijuípe/tijuipe1.jpg" alt="Cachoeira do Tijuípe">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Tijuípe/tijuipe2.jpg" alt="Cachoeira do Tijuípe">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Tijuípe/tijuipe3.jpg" alt="Cachoeira do Tijuípe">
-                                    </div>
-
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="cachoeira-do-cleandro">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="./img Cleandro/cachoeira cleandro2.jpg" alt="Cachoeira do Cleandro">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Cleandro/cachoeira cleandro1.jpg" alt="Cachoeira do Cleandro">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Cleandro/cachoeira cleandro.jpg" alt="Cachoeira do Cleandro">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="./img Cleandro/cachoeira cleandro3.jpg" alt="Cachoeira do Cleandro">
-                                    </div>
-                                    <div class="text-center mt-4 d-block d-lg-none">
-                                        <button class="btn btn-outline-success voltar-menu-praias">
-                                            ⬆️ Voltar ao Menu de Praias
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="lazer-title-container">
+                <h2 class="section-tittle text-center">Área de <span>Lazer</span></h2>
+                <p class="text-center text-muted">Continue descendo para explorar nossos espaços.</p>
             </div>
-        </section>
-        <section id="avaliacoes" class="pt-5 pb-5">
-            <div class="container">
 
-                <div class="row">
-                    <h2 class="section-tittle text-center">
-                        Avaliações dos <span>Hóspedes</span>
-                    </h2>
+            <div class="lazer-images-wrapper">
 
-                    <p class="text-center mb-5">
-                        Veja o que nossos visitantes dizem sobre a experiência na
-                        Pousada Flor de Lotus.
-                    </p>
+                <div class="lazer-img-item carousel slide" id="lazer-img-1" data-bs-ride="carousel" data-bs-interval="3500">
+                    <div class="carousel-inner h-100">
+                        <div class="carousel-item active h-100">
+                            <img src="./img Pousada/FlordeLotus5.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Sinuca">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="./img Pousada/FlordeLotus5.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Sinuca 2">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lazer-img-1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lazer-img-1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
 
-                <div class="row g-4">
-
-                    <!-- Avaliação 1 -->
-                    <div class="col-md-4">
-                        <div class="card-avaliacao h-100">
-
-                            <div class="avaliacao-topo">
-                                <h5>Ramon</h5>
-                                <span>⭐⭐⭐⭐⭐</span>
-                            </div>
-
-                            <p>
-                                “Gostei que as praias ficam perto da pra ir a pé.
-                                A dona do estabelecimento e muito simpática
-                                O local é aconchegante café da manhã sempre tem novidades, muito bom eu recomendo.”
-                            </p>
-
-                            <small>Booking.com</small>
+                <div class="lazer-img-item carousel slide" id="lazer-img-2" data-bs-ride="carousel" data-bs-interval="3500">
+                    <div class="carousel-inner h-100">
+                        <div class="carousel-item active h-100">
+                            <img src="./img Pousada/FlordeLotus9.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Churrasqueira">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="./img Pousada/FlordeLotus9.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Churrasqueira 2">
                         </div>
                     </div>
-
-                    <!-- Avaliação 2 -->
-                    <div class="col-md-4">
-                        <div class="card-avaliacao h-100">
-
-                            <div class="avaliacao-topo">
-                                <h5>Helio</h5>
-                                <span>⭐⭐⭐⭐⭐</span>
-                            </div>
-
-                            <p>
-                                “OLHA ,O CAFÉ DA MANHÃ EXTRAORDINÁRIO, A EDUCAÇÃO DAS MOÇAS QUE SERVEM ,O CAFÉ E FAZ A
-                                LIMPEZA, DISPENSA COMENTÁRIOS, O ZILTER E UMA FIGURA, A SEGUNDA VEZ ,QUE VOU EM ITACARÉ,
-                                VOLTAREI LA ,E HOSPEDAREI LA.POUSADA FLOR DE LOTUS.”
-                            </p>
-
-                            <small>Booking.com</small>
-                        </div>
-                    </div>
-
-                    <!-- Avaliação 3 -->
-                    <div class="col-md-4">
-                        <div class="card-avaliacao h-100">
-
-                            <div class="avaliacao-topo">
-                                <h5>Manoela</h5>
-                                <span>⭐⭐⭐⭐⭐</span>
-                            </div>
-
-                            <p>
-                                “A localização da Pousada e Maravilhosa , o tratamento da Josi e do seu esposo foram
-                                excelentes.
-                                Voltaremos sem dúvida alguma
-                                O ambiente e totalmente acolhedor.
-                                Café da manhã muito bom
-                                Amamos a experiência”
-                            </p>
-
-                            <small>Booking.com</small>
-                        </div>
-                    </div>
-
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lazer-img-2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lazer-img-2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
 
-                <!-- BOTÃO -->
-                <div class="text-center mt-5">
-                    <a href="avaliacoes.html" class="btn-avaliacoes">
-                        Ver todas as avaliações
-                    </a>
+                <div class="lazer-img-item carousel slide" id="lazer-img-3" data-bs-ride="carousel" data-bs-interval="3500">
+                    <div class="carousel-inner h-100">
+                        <div class="carousel-item active h-100">
+                            <img src="./img Pousada/FlordeLotus6.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Piscina">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="./img Pousada/FlordeLotus6.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Piscina 2">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lazer-img-3" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lazer-img-3" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
 
             </div>
-        </section>
-        <section id="fale-conosco" class="pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <h2 class="section-tittle text-center">Fale <span class="text-colored">Conosco</span></h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-7 mb-4">
-                        <form id="whatsapp-form">
-                            <div>
-                                <label for="nome" class="form-label">Nome:</label>
-                                <input type="text" id="nome" class="form-control" required>
-                            </div>
-                            <div>
-                                <label for="telefone" class="form-label">Telefone:</label>
-                                <input type="tel" id="telefone" placeholder="(00) 0 0000-0000" class="form-control"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="email" class="form-label">E-mail:</label>
-                                <input type="email" id="email" class="form-control" required>
-                            </div>
-                            <div>
-                                <label for="mensagem" class="form-label">Mensagem:</label>
-                                <textarea class="form-control" placeholder="Sua mensagem..." id="mensagem"
-                                    required></textarea><br />
-                            </div>
-                            <button type="submit" class="btn btn-enviar">
-                                <i class="bi bi-whatsapp"></i> Enviar
-                            </button>
-                        </form>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="row">
-                            <h3 class="section-tittle fs-4 text-colored">
-                                <i class="bi bi-hand-thumbs-up"></i>
-                                Redes Sociais
-                            </h3>
-                            <ul class="social-links">
-                                <li class="fs-3">
-                                    <a href="https://www.facebook.com/share/15sgTAWutg/">
-                                        <i class="bi bi-facebook text-colored"></i>
-                                    </a>
-                                </li>
-                                <li class="fs-3">
-                                    <a href="https://www.instagram.com/flordelotuspousada1?igsh=MXVtNHJmNWtkeXE1bg==">
-                                        <i class="bi bi-instagram text-colored"></i>
-                                    </a>
-                                </li>
-                                <li class="fs-3">
-                                    <a href="https://wa.me/557399728505">
-                                        <i class="bi bi-whatsapp text-colored"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row">
-                            <h3 class="section-tittle fs-4 text-colored">
-                                <i class="bi bi-geo-alt"></i>
-                                Endereço
-                            </h3>
-                            <p>
-                            <div class="info-localizacao">
-                                <p>📍 Rua Hibisco, Nº 33 - Praia da Concha - Itacaré/BA</p>
 
-                                <p>🏖️ Apenas 3 minutos da Praia da Concha</p>
+            <div class="lazer-texts-wrapper">
+
+                <div class="lazer-text-item" id="lazer-text-1">
+                    <span class="fw-bold text-uppercase" style="color: var(--dourado); letter-spacing: 2px; font-size: 0.85rem;">01. Diversão</span>
+                    <h3 class="text-colored fs-1 fw-bold mt-2 mb-3"><i class="bi bi-controller me-2"></i>Sinuca</h3>
+                    <p class="text-muted fs-5">Desafie seus amigos ou familiares para uma partida descontraída. O ambiente perfeito para fechar a noite com boas risadas após os passeios maravilhosos por Itacaré.</p>
+                </div>
+
+                <div class="lazer-text-item" id="lazer-text-2">
+                    <span class="fw-bold text-uppercase" style="color: var(--dourado); letter-spacing: 2px; font-size: 0.85rem;">02. Gastronomia</span>
+                    <h3 class="text-colored fs-1 fw-bold mt-2 mb-3"><i class="bi bi-fire me-2"></i>Churrasqueira</h3>
+                    <p class="text-muted fs-5">Aproveite nossa área gourmet equipada para preparar aquele churrasco especial. Um espaço amplo, rústico e muito acolhedor para confraternizar com quem você ama.</p>
+                </div>
+
+                <div class="lazer-text-item" id="lazer-text-3">
+                    <span class="fw-bold text-uppercase" style="color: var(--dourado); letter-spacing: 2px; font-size: 0.85rem;">03. Relaxamento</span>
+                    <h3 class="text-colored fs-1 fw-bold mt-2 mb-3"><i class="bi bi-water me-2"></i>Piscina</h3>
+                    <p class="text-muted fs-5">Refresque-se em nossa piscina ao ar livre. Cercada por muito verde e com confortáveis espreguiçadeiras, é o local ideal para relaxar, ler um livro e tomar um banho de sol.</p>
+                </div>
+
+            </div> <div class="lazer-wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" style="fill: #f8f4eb;"></path>
+                </svg>
+            </div>
+
+        </section>
+
+    <section id="praias" class="pt-5 pb-5">
+        <div class="container">
+            <div class="row" id="topo-praias">
+                <h2 class="section-tittle text-center mb-5">
+                    Praias de <span>Itacaré</span>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="d-block d-md-none mb-4">
+                    <div class="praias-dropdown-box">
+                        <label for="praias-select" class="form-label fw-bold text-colored">
+                            Escolha a praia:
+                        </label>
+                        <select class="form-select praias-dropdown" id="praias-select">
+                            <option value="orla-de-itacare" selected>🌅 Orla de Itacaré</option>
+                            <option value="praia-da-concha">🏖️ Praia da Concha</option>
+                            <option value="praia-da-resende">🌊 Praia da Resende</option>
+                            <option value="praia-da-tiririca">🏄 Praia da Tiririca</option>
+                            <option value="praia-da-ribeira">🌴 Praia da Ribeira</option>
+                            <option value="praia-de-jeribucaçu">🌺 Praia de Jeribucaçu</option>
+                            <option value="praia-de-itacarezinho">☀️ Praia de Itacarezinho</option>
+                            <option value="cachoeira-do-tijuipe">🏞️ Cachoeira do Tijuípe</option>
+                            <option value="cachoeira-do-cleandro">🌿 Cachoeira do Cleandro</option>
+                        </select>
+                    </div>
+                </div>
+                <aside class="col-md-2 d-none d-md-block">
+                    <nav class="nav nav-pills flex-column nav-praias">
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#orla-de-itacare"
+                            class="fw-bold text-start nav-link text-colored active">
+                            Orla de Itacaré
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-concha"
+                            class="fw-bold text-start nav-link text-colored">
+                            Praia da Concha
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-resende"
+                            class="fw-bold text-start nav-link text-colored">
+                            Praia da Resende
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-tiririca"
+                            class="fw-bold text-start nav-link text-colored">
+                            Praia da Tiririca
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#praia-da-ribeira"
+                            class="fw-bold text-start nav-link text-colored">
+                            Praia da Ribeira
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#praia-de-jeribucaçu"
+                            class="fw-bold text-start nav-link text-colored">
+                            Praia de Jeribucaçu
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#praia-de-itacarezinho"
+                            class="fw-bold text-start nav-link text-colored">
+                            Praia de Itacarezinho
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#cachoeira-do-tijuipe"
+                            class="fw-bold text-start nav-link text-colored">
+                            Cachoeira do Tijuípe
+                        </button>
+
+                        <button type="button" data-bs-toggle="tab" data-bs-target="#cachoeira-do-cleandro"
+                            class="fw-bold text-start nav-link text-colored">
+                            Cachoeira do Cleandro</button>
+                    </nav>
+                </aside>
+                <div class="col-md-10">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="orla-de-itacare">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Orla/orla.jpg" alt="Orla com nascer do sol">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Orla/orla1.jpg" alt="Orla com nascer do sol">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Orla/orla2.jpg" alt="Orla com nascer do sol">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Orla/orla3.jpg" alt="Orla com nascer do sol">
+                                </div>
+                                <div class="text-center mt-4 d-md-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
                             </div>
-                            </p>
+                        </div>
+                        <div class="tab-pane" id="praia-da-concha">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img concha/praiadaconcha1.jpg" alt="Praia da concha">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img concha/praiadaconcha2.jpg" alt="Praia da concha">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img concha/praiadaconcha3.jpg" alt="Praia da concha">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img concha/praiadaconcha4.jpg" alt="Praia da concha">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="praia-da-resende">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Resende/resende1.jpg" alt="Praia da Resende">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Resende/resende3.jpg" alt="Praia da Resende">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Resende/resende5.jpg" alt="Praia da Resende">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Resende/resende6.jpg" alt="Praia da Resende">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="praia-da-tiririca">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Tiririca/tiririca.jpg" alt="Praia da Resende">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Tiririca/tiririca1.jpg" alt="Praia da Resende">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Tiririca/tiririca3.jpg" alt="Praia da tiririca">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="praia-da-ribeira">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Ribeira/ribeira1.jpg" alt="Praia da Ribeira">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Ribeira/praiaribeira.jpg" alt="Praia da Ribeira">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="praia-de-jeribucaçu">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Jeribucaçu/jeribucaçu3.jpg" alt="Praia de Jeribucaçu">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Jeribucaçu/jeribucaçu4.jpg" alt="Praia de Jeribucaçu">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Jeribucaçu/jeribucaçu1.jpg" alt="Praia de Jeribucaçu">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Jeribucaçu/jeribucaçu2.jpg" alt="Praia de Jeribucaçu">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="praia-de-itacarezinho">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Itacarezinho/miranteitacarezinho1.jpg"
+                                        alt="Mirante de Itacarezinho">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Itacarezinho/itacarezinho.jpg" alt="Praia de Itacarezinho">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Itacarezinho/itacarezinho1.jpg" alt="Praia de Itacarezinho">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Itacarezinho/itacarezinho2.jpg" alt="Praia de Itacarezinho">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="cachoeira-do-tijuipe">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Tijuípe/tijuipe.jpg" alt="Cachoeira do Tijuípe">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Tijuípe/tijuipe1.jpg" alt="Cachoeira do Tijuípe">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Tijuípe/tijuipe2.jpg" alt="Cachoeira do Tijuípe">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Tijuípe/tijuipe3.jpg" alt="Cachoeira do Tijuípe">
+                                </div>
+
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="cachoeira-do-cleandro">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./img Cleandro/cachoeira cleandro2.jpg" alt="Cachoeira do Cleandro">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Cleandro/cachoeira cleandro1.jpg" alt="Cachoeira do Cleandro">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Cleandro/cachoeira cleandro.jpg" alt="Cachoeira do Cleandro">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="./img Cleandro/cachoeira cleandro3.jpg" alt="Cachoeira do Cleandro">
+                                </div>
+                                <div class="text-center mt-4 d-block d-lg-none">
+                                    <button class="btn btn-outline-success voltar-menu-praias">
+                                        ⬆️ Voltar ao Menu de Praias
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="localizacao" class="pt-5 pb-5">
-            <div class="container">
+        </div>
+    </section>
+    <section id="avaliacoes" class="pt-5 pb-5">
+        <div class="container">
 
-                <div class="row mb-4">
-                    <div class="col text-center">
-                        <h2 class="section-tittle">
-                            Nossa <span>Localização</span>
-                        </h2>
+            <div class="row">
+                <h2 class="section-tittle text-center">
+                    Avaliações dos <span>Hóspedes</span>
+                </h2>
 
-                        <p>
-                            Estamos localizados próximos à Praia da Concha,
-                            em uma região tranquila e cercada pela natureza.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <div class="mapa-container">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d966.6503207455313!2d-38.991001310535104!3d-14.276459651459168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7393537958f0d43%3A0x5549d0040f6757ff!2sPousada%20Flor%20de%20Lotus!5e0!3m2!1spt-BR!2sbr!4v1778290627113!5m2!1spt-BR!2sbr"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" width="100%" height="450" style="border:0;"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <footer>
-            <div class="pt-3 pb-2">
-                <p>
-                    &copy; 2026 - Pousada Flor de Lótus - Todos os direitos reservados!
+                <p class="text-center mb-5">
+                    Veja o que nossos visitantes dizem sobre a experiência na
+                    Pousada Flor de Lotus.
                 </p>
             </div>
-        </footer>
+
+            <div class="row g-4">
+
+                <!-- Avaliação 1 -->
+                <div class="col-md-4">
+                    <div class="card-avaliacao h-100">
+
+                        <div class="avaliacao-topo">
+                            <h5>Ramon</h5>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+
+                        <p>
+                            “Gostei que as praias ficam perto da pra ir a pé.
+                            A dona do estabelecimento e muito simpática
+                            O local é aconchegante café da manhã sempre tem novidades, muito bom eu recomendo.”
+                        </p>
+
+                        <small>Booking.com</small>
+                    </div>
+                </div>
+
+                <!-- Avaliação 2 -->
+                <div class="col-md-4">
+                    <div class="card-avaliacao h-100">
+
+                        <div class="avaliacao-topo">
+                            <h5>Helio</h5>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+
+                        <p>
+                            “OLHA ,O CAFÉ DA MANHÃ EXTRAORDINÁRIO, A EDUCAÇÃO DAS MOÇAS QUE SERVEM ,O CAFÉ E FAZ A
+                            LIMPEZA, DISPENSA COMENTÁRIOS, O ZILTER E UMA FIGURA, A SEGUNDA VEZ ,QUE VOU EM ITACARÉ,
+                            VOLTAREI LA ,E HOSPEDAREI LA.POUSADA FLOR DE LOTUS.”
+                        </p>
+
+                        <small>Booking.com</small>
+                    </div>
+                </div>
+
+                <!-- Avaliação 3 -->
+                <div class="col-md-4">
+                    <div class="card-avaliacao h-100">
+
+                        <div class="avaliacao-topo">
+                            <h5>Manoela</h5>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+
+                        <p>
+                            “A localização da Pousada e Maravilhosa , o tratamento da Josi e do seu esposo foram
+                            excelentes.
+                            Voltaremos sem dúvida alguma
+                            O ambiente e totalmente acolhedor.
+                            Café da manhã muito bom
+                            Amamos a experiência”
+                        </p>
+
+                        <small>Booking.com</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BOTÃO -->
+            <div class="text-center mt-5">
+                <a href="avaliacoes.html" class="btn-avaliacoes">
+                    Ver mais avaliações
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <section id="fale-conosco" class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="section-tittle text-center">Fale <span class="text-colored">Conosco</span></h2>
+            </div>
+            <div class="row">
+                <div class="col-md-7 mb-4">
+                    <form id="whatsapp-form">
+                        <div>
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" id="nome" class="form-control" required>
+                        </div>
+                        <div>
+                            <label for="telefone" class="form-label">Telefone:</label>
+                            <input type="tel" id="telefone" placeholder="(00) 0 0000-0000" class="form-control"
+                                required>
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div>
+                            <label for="mensagem" class="form-label">Mensagem:</label>
+                            <textarea class="form-control" placeholder="Sua mensagem..." id="mensagem"
+                                required></textarea><br />
+                        </div>
+                        <button type="submit" class="btn btn-enviar">
+                            <i class="bi bi-whatsapp"></i> Enviar
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <h3 class="section-tittle fs-4 text-colored">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                            Redes Sociais
+                        </h3>
+                        <ul class="social-links">
+                            <li class="fs-3">
+                                <a href="https://www.facebook.com/share/15sgTAWutg/">
+                                    <i class="bi bi-facebook text-colored"></i>
+                                </a>
+                            </li>
+                            <li class="fs-3">
+                                <a href="https://www.instagram.com/flordelotuspousada1?igsh=MXVtNHJmNWtkeXE1bg==">
+                                    <i class="bi bi-instagram text-colored"></i>
+                                </a>
+                            </li>
+                            <li class="fs-3">
+                                <a href="https://wa.me/557399728505">
+                                    <i class="bi bi-whatsapp text-colored"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <h3 class="section-tittle fs-4 text-colored">
+                            <i class="bi bi-geo-alt"></i>
+                            Endereço
+                        </h3>
+                        <p>
+                        <div class="info-localizacao">
+                            <p>📍 Rua Hibisco, Nº 33 - Praia da Concha - Itacaré/BA</p>
+
+                            <p>🏖️ Apenas 3 minutos da Praia da Concha</p>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="localizacao" class="pt-5 pb-5">
+        <div class="container">
+
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <h2 class="section-tittle">
+                        Nossa <span>Localização</span>
+                    </h2>
+
+                    <p>
+                        Estamos localizados próximos à Praia da Concha,
+                        em uma região tranquila e cercada pela natureza.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mapa-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d966.6503207455313!2d-38.991001310535104!3d-14.276459651459168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7393537958f0d43%3A0x5549d0040f6757ff!2sPousada%20Flor%20de%20Lotus!5e0!3m2!1spt-BR!2sbr!4v1778290627113!5m2!1spt-BR!2sbr"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" width="100%" height="450" style="border:0;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="pt-3 pb-2">
+            <p>
+                &copy; 2026 - Pousada Flor de Lótus - Todos os direitos reservados!
+            </p>
+        </div>
+    </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./main.js"></script>
 </body>
 

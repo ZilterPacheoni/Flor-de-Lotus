@@ -14,6 +14,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 html {
@@ -873,31 +874,280 @@ footer {
         transition-delay: 0.36s;
     }
 
-    /* =========================
-   ANIMAÇÃO: MINIATURAS VOANDO (Sincronizado com Carrossel)
+}
+
+/* =========================
+   ANIMAÇÃO: MINIATURAS EFEITO DESLIZE PARA O CARROSSEL
    ========================= */
 
-    /* Transição base suave para quando o JavaScript adiciona/remove a classe */
+.quarto-img-thumb {
+    width: 100%;
+    height: calc(50% - 6px);
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    cursor: zoom-in;
+    opacity: 0.85;
+    /* Removemos a 'transition' daqui para não interferir com a animação nova */
+}
+
+/* Efeito Hover na miniatura (Apenas brilho e borda, sem mexer na posição) */
+.quarto-img-thumb:hover {
+    opacity: 1;
+    border: 2px solid var(--dourado);
+    transition: all 0.2s ease;
+}
+
+/* Classes disparadas pelo JavaScript */
+.animate-thumb-1 {
+    animation: thumbToMain 0.4s forwards ease-in-out;
+}
+
+.animate-thumb-2 {
+    animation: thumbShift 0.4s forwards ease-in-out;
+}
+
+.fade-in-thumb {
+    animation: thumbFadeIn 0.4s forwards ease-out;
+}
+
+/* 🖥️ ANIMAÇÕES DESKTOP (Imagens lado a lado) */
+@keyframes thumbToMain {
+    to {
+        transform: translateX(-60px) scale(1.05);
+        opacity: 0;
+    }
+}
+
+@keyframes thumbShift {
+    to {
+        transform: translateY(calc(-100% - 12px));
+    }
+}
+
+@keyframes thumbFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 ANIMAÇÕES MOBILE (Imagens empilhadas/em linha) */
+@media (max-width: 991px) {
     .quarto-img-thumb {
-        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+        height: 100%;
+        width: calc(50% - 6px);
     }
 
-    /* Classe acionada pelo JavaScript durante a troca de slide.
-   No Desktop: As miniaturas encolhem um pouco e vão para a ESQUERDA (direção da foto maior).
-*/
-    .animating-thumbs .quarto-img-thumb {
-        opacity: 0 !important;
-        transform: translateX(-60px) scale(0.9);
-    }
-
-    /* Ajuste Mobile: Quando a tela é menor que 991px, a foto grande fica no topo.
-   Então, mudamos a animação para as miniaturas irem para CIMA.
-*/
-    @media (max-width: 991px) {
-        .animating-thumbs .quarto-img-thumb {
-            transform: translateY(-50px) scale(0.9);
-            /* Vai para CIMA */
+    /* A 1ª miniatura voa para CIMA (em direção ao carrossel) */
+    @keyframes thumbToMain {
+        to {
+            transform: translateY(-50px) scale(1.05);
+            opacity: 0;
         }
     }
 
+    /* A 2ª miniatura desliza para a ESQUERDA (para ocupar o lugar da 1ª) */
+    @keyframes thumbShift {
+        to {
+            transform: translateX(calc(-100% - 12px));
+        }
+    }
+
+    /* A nova miniatura entra pela DIREITA */
+    @keyframes thumbFadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+/* =========================
+   ALINHAMENTO DE TAMANHO: FORMULÁRIO DE RESERVA
+   ========================= */
+
+/* Força o Select e os Inputs de Data a terem RIGOROSAMENTE a mesma altura */
+.campo-tamanho-igual {
+    height: 52px !important;
+    min-height: 52px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    box-sizing: border-box !important;
+}
+
+/* Força o botão a ter a mesma altura e centraliza o conteúdo */
+.btn-tamanho-igual {
+    height: 52px !important;
+    min-height: 52px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    /* Remove padding extra que o Bootstrap põe nos botões */
+}
+
+/* =========================
+   ÁREA DE LAZER (GSAP SCROLL)
+   ========================= */
+
+.lazer-scroll-container {
+    position: relative;
+    height: 100vh;
+    /* Ocupa 100% da altura da tela */
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bege);
+    /* Mantém a paleta da pousada */
+}
+
+.lazer-title-container {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+}
+
+.lazer-images-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.lazer-img-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    /* Largura inicial */
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    border: 4px solid var(--branco);
+    background-color: var(--branco);
+    overflow: hidden;
+    will-change: transform, opacity, width, height;
+}
+
+.lazer-texts-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 55vw;
+    width: 35vw;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Deixa clicar nas coisas por baixo */
+    z-index: 30;
+}
+
+.lazer-text-item {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    transform: translateY(-50%);
+}
+
+/* Responsividade Mobile/Tablet */
+@media (max-width: 991px) {
+    .lazer-img-item {
+        width: 280px;
+        height: 380px;
+    }
+
+    .lazer-texts-wrapper {
+        top: 75%;
+        left: 50%;
+        width: 90vw;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .lazer-text-item {
+        /* No mobile, colocamos um fundo de vidro desfocado para ler bem o texto por cima das fotos */
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: var(--sombra);
+    }
+
+    .lazer-text-item h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .lazer-text-item p {
+        font-size: 1rem !important;
+    }
+
+    .lazer-wave-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        /* Inverte a onda para ela apontar para baixo */
+        z-index: 50;
+        /* Garante que fica por cima das fotos e textos */
+    }
+
+    .lazer-wave-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 70px;
+        /* Podes aumentar ou diminuir a "altura" da onda aqui */
+    }
+}
+
+/* =========================
+   ONDAS DA ÁREA DE LAZER (FIXAS)
+   ========================= */
+
+.lazer-wave-top,
+.lazer-wave-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 50; /* Por cima das fotos e textos */
+}
+
+.lazer-wave-top {
+    top: 0;
+}
+
+.lazer-wave-bottom {
+    bottom: 0;
+}
+
+.lazer-wave-top svg,
+.lazer-wave-bottom svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px; /* Altura sutil para as ondas */
+}
+
+/* Ajuste de profundidade para garantir que o título não fique atrás da onda */
+.lazer-title-container {
+    z-index: 60;
 }
