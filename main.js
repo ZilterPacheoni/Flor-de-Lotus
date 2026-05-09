@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================
-   MOBILE - ANIMAÇÃO TIPO NOTIFICAÇÕES
+    MOBILE - ANIMAÇÃO TIPO NOTIFICAÇÕES
    ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
