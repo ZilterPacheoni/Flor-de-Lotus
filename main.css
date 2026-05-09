@@ -270,8 +270,7 @@ img:hover{
     box-shadow: 0 0 10px rgba(200,169,107,0.25);
 }
 
-.btn-reservar,
-#fale-conosco button{
+.btn-reservar{
     background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
     border: none;
     color: white;
@@ -449,4 +448,33 @@ footer{
 
 .carousel-quarto-desktop .carousel-control-next {
     right: 80px;
+}
+
+.mapa-container {
+    display: flex;
+    justify-content: center;
+}
+
+.mapa-container iframe {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .mapa-container iframe {
+        height: 300px;
+    }
+}
+
+#fale-conosco .btn-enviar:hover {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: white !important;
+    cursor: pointer;
+}
+#fale-conosco .btn-enviar {
+    background-color: #157347;
+    color: white;
+    border: none;
+    transition: 0.3s;
 }
