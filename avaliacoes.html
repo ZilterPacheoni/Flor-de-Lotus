@@ -4,36 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Avaliações | Pousada Flor de Lotus</title>
-
     <link rel="stylesheet" href="./main.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="icon" type="image" href="img Pousada/flordelotuslogo.png">
 </head>
 
-<body>
-
+<body class="pag-interna">
     <!-- HEADER -->
-    <header class="navbar navbar-expand-lg sticky-top pt-2 pb-2" id="cabecalho">
+    <header class="navbar navbar-expand-lg sticky-top pt-1 pb-1" id="cabecalho">
         <div class="container">
-
-            <a href="index.html">
-                <img src="./img Pousada/flordelotuslogo.png" alt="Logo Pousada Flor de Lotus">
+            <!-- Logo: volta para o topo da index -->
+            <a class="navbar-brand" href="index.html">
+                <img src="./img Pousada/flordelotuslogo.png" alt="logo da pousada">
             </a>
 
+            <!-- Botão Hamburguer (Mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <nav class="collapse navbar-collapse justify-content-end" id="menu-navegacao">
+                <ul class="navbar-nav nav-pills">
+                    <li class="nav-item fw-bold">
+                        <a href="index.html#sobre-a-pousada" class="nav-link">
+                            <i class="bi bi-house-door me-1"></i> Sobre nós
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="index.html#quartos" class="nav-link">
+                            <i class="bi bi-moon-stars me-1"></i> Nossos Quartos
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="index.html#area-de-lazer" class="nav-link">
+                            <i class="bi bi-sun me-1"></i> Área de Lazer
+                        </a>
+                    </li>
+
+                    <li class="nav-item fw-bold">
+                        <a href="index.html#praias" class="nav-link">
+                            <i class="bi bi-water"></i> Praias
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="index.html#fale-conosco" class="nav-link active">
+                            <i class="bi bi-telephone-inbound me-1"></i> Fale Conosco
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-
     <!-- HERO -->
-    <section class="pt-5 pb-5">
+    <!-- SEÇÃO INTEGRADA DE AVALIAÇÕES (FUNDO E CARDS) -->
+    <section class="section-notas-fundo">
         <div class="container text-center">
-
             <h1 class="section-tittle">
-                Avaliações dos <span>Hóspedes</span>
+                 <span>Avaliações dos Hóspedes</span>
             </h1>
 
             <p class="mb-5">
@@ -42,379 +72,279 @@
             </p>
 
             <!-- NOTA GERAL -->
-            <div class="nota-geral-box">
-
-                <div class="nota-numero">
-                    9.3
-                </div>
-
+            <div class="nota-geral-box mb-5">
+                <div class="nota-numero">9.3</div>
                 <div>
                     <h3>Fantástico</h3>
                     <p>Baseado em avaliações reais da Booking.com</p>
                 </div>
-
             </div>
-
         </div>
-    </section>
 
-    <!-- NOTAS -->
-    <section class="pb-5">
-        <div class="container">
-
+        <!-- AREA DOS CARDS (A que vai flutuar/sobrepor) -->
+        <div class="container container-cards-overlap">
             <div class="row g-4">
-
                 <div class="col-md-4">
-                    <div class="nota-card">
+                    <div class="nota-card borda-personalizada">
                         <h5>Funcionários</h5>
                         <span>9.1</span>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="nota-card">
-                        <h5>comodidades</h5>
+                    <div class="nota-card borda-personalizada">
+                        <h5>Comodidades</h5>
                         <span>8.3</span>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="nota-card">
-                        <h5>limpeza</h5>
+                    <div class="nota-card borda-personalizada">
+                        <h5>Limpeza</h5>
                         <span>8.8</span>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="nota-card">
+                    <div class="nota-card borda-personalizada">
                         <h5>Conforto</h5>
                         <span>8.8</span>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="nota-card">
+                    <div class="nota-card borda-personalizada">
                         <h5>Custo-benefício</h5>
                         <span>8.3</span>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="nota-card">
+                    <div class="nota-card borda-personalizada">
                         <h5>Localização</h5>
                         <span>9.3</span>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
-
     <!-- AVALIAÇÕES -->
-    <section class="pb-5">
-        <div class="container">
+    <section class="pb-5 secao-avaliacoes-premium">
+    <div class="container">
+        <!-- Adicionado ID para controle do JavaScript -->
+        <div class="row g-4" id="lista-comentarios">
 
-            <div class="row g-4">
-
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
-
-                        <div class="avaliacao-topo">
-                            <h5>Rita</h5>
-                            <span>⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “A hospedagem foi fabulosa! O local é excelente! O atendimentos de todos foi maravilhoso!
-                            Até a próxima.”
-                        </p>
-
+            <!-- Rita -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Rita</h5>
+                        <span>9,0</span>
                     </div>
+                    <p>“😀 A hospedagem foi fabulosa! O local é excelente! O atendimentos de todos foi maravilhoso! Até a próxima.”</p>
                 </div>
+            </div>
 
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
-
-                        <div class="avaliacao-topo">
-                            <h5>Ricardo A.</h5>
-                            <span>⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Localização, atendimento dos funcionários.
-                            Café da manhã farto - com ovos, tapioca, iogurte, frutas, pães, bolos, salgados à vontade.”
-                        </p>
-
+            <!-- Alexandre -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Alexandre</h5>
+                        <span>8,0</span>
                     </div>
+                    <p>“😀 Localização, atendimento dos funcionários. Café da manhã farto - com ovos, tapioca, iogurte, frutas, pães, bolos, salgados à vontade.<br>☹️ Manutenção / embelezamento. Colchão muito mole para o meu gosto.”</p>
                 </div>
+            </div>
 
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
-
-                        <div class="avaliacao-topo">
-                            <h5>Fernanda L.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Piscina maravilhosa, café da manhã delicioso
-                            e ótima localização.”
-                        </p>
-
+            <!-- Diego -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Diego</h5>
+                        <span>9,0</span>
                     </div>
+                    <p>“😀 Café da manhã bom, quarto espaçoso, local silencioso.<br>☹️ A área da piscina estava um pouco sem manutenção.”</p>
                 </div>
+            </div>
 
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
-
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Sérgio -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Sérgio</h5>
+                        <span>10</span>
                     </div>
+                    <p>“😀 Quarto grande, internet rápida, hospitalidade e a localização perfeita, bem próxima da praia, sem a necessidade de transporte.”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Marilia -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Marilia</h5>
+                        <span>10</span>
                     </div>
+                    <p>“😀 Um lugar aconchegante, familiar, um café da manhã de alto nível e uma recepção bem agradável.”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Eugenio -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Eugenio</h5>
+                        <span>9,0</span>
                     </div>
+                    <p>“😀 Proprietários simpáticos, ótimo atendimento, ótima localização, ambiente em geral simples mas limpo e acolhedor. Ótimo custo benefício!”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Maria -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Maria</h5>
+                        <span>10</span>
                     </div>
+                    <p>“😀 A melhor decisão para passa a minha estadia em Itacaré! Com nota 10 10 Eu amei o conforto do quarto, o café da manhã da pousada, a tapioca é ótima! O atendimento da recepção é ótimo também! Como cheguei à noite foram bem flexíveis e cordiais!”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Alexandre (2) -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Alexandre</h5>
+                        <span>9,0</span>
                     </div>
+                    <p>“😀 Hospedagem muito boa e bem localizada<br>Equipe gentil, localização fantástica, ar-condicionado, café da manhã Banheiro precisa de uma leve renovação, senti falta de luzes indiretas para relaxamento a noite, ventilador de apoio seria bom também”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Ricardo -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Ricardo</h5>
+                        <span>9,0</span>
                     </div>
+                    <p>“😀 Excelente custo benefício! Localização excelente, funcionários atenciosos e prestativos, café da manhã muito bom, limpeza do quarto e cama confortável.<br>☹️ Box do banheiro não fechava totalmente.”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Hayany -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Hayany</h5>
+                        <span>8,0</span>
                     </div>
+                    <p>😀 As camareiras são muito gentis e educadas. A limpeza é exatamente.<br>☹️ Poderia ter um varal pra colocar as roupas de banho molhadas . A Tv não tinha um canal que funcionasse bem . O café da manhã precisa melhorar a questão do horário e tbm os bolos, são todos solados .</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Hélio -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Hélio</h5>
+                        <span>10</span>
                     </div>
+                    <p>“😀 localização e comodidades dentro da expectativa. atendimento superior em todos os níveis do staff. só por eles já vale a pena ficar nessa pousada.<br>☹️ Da pousada nada a reclamar. da cidade a parte turística está muito bem cuidada, mas a parte não turística poderia ter maiores cuidados com a limpeza.”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Gisele -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Gisele</h5>
+                        <span>10</span>
                     </div>
+                    <p>“😀 Atendimento excelente; quarto confortável e muito bem higienizado, roupa de cama impecável, limpeza nota 10; café da manhã incrível, muito variado, delicioso e feito por profissionais muito gentis; localização ótima, perto da praia da Concha e do Centro.”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Caliali -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Caliali</h5>
+                        <span>8,0</span>
                     </div>
+                    <p>“😀 Lugar agradável e fora da Muvuca, fomos bem recebidos pelos proprietários e tivemos boas conversas, o café da manhã maravilhoso sem dúvida...Love Itacaré quero voltar logo e quem sabe pra morar por ai..me apaixonei por esse lugar.Namasthe”</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-avaliacao">
+            </div>
 
-                        <div class="avaliacao-topo">
-                            <h5>Carlos M.</h5>
-                            <span>⭐⭐⭐⭐⭐</span>
-                        </div>
-
-                        <p>
-                            “Lugar silencioso e muito bonito.
-                            Ótima experiência em Itacaré.”
-                        </p>
-
+            <!-- Louise -->
+            <div class="col-lg-6 card-item">
+                <div class="card-avaliacao">
+                    <div class="avaliacao-topo">
+                        <h5>Louise</h5>
+                        <span>10</span>
                     </div>
+                    <p>“😀 Estadia muito boa, local com ótima localização e perto de tudo. Café da manhã bom, piscina ótima e os funcionários são maravilhosos Acomodação boa, cama confortável, ambiente limpo e organizado.<br>☹️ Chuveiro, acho que seria essencial a troca do Ap 08, pq o chuveiro não cai água direito.”</p>
                 </div>
-
             </div>
 
         </div>
-    </section>
+
+        <!-- Botão Visível apenas no Mobile (d-lg-none) -->
+        <div class="text-center mt-4 d-lg-none">
+            <button id="btn-ver-mais" class="btn btn-outline-primary" style="border-color: #d4af37; color: #d4af37;">
+                Ver mais comentários <i class="bi bi-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</section>
     <!-- RESERVA FINAL -->
-    <section class="pb-5">
+    <section class="pb-5 pt-5 section-reserva-fundo">
         <div class="container">
-
             <div class="box-reserva-final">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase"
+                        style="color: rgb(255, 255, 255); letter-spacing: 3px; font-weight: 700; font-size: 0.8rem;">Sua
+                        estadia começa aqui</span>
+                    <h3 class="mt-2">Solicite sua Reserva</h3>
+                </div>
 
-                <h3 class="text-center mb-4">
-                    Faça sua Reserva 🌴
-                </h3>
-
-                <div class="row g-3">
-
-                    <!-- CHECK-IN -->
+                <div class="row g-4">
                     <div class="col-md-6">
-                        <label class="form-label">
-                            Check-in
-                        </label>
-
+                        <label class="form-label"><i class="bi bi-calendar-check me-2"></i>Check-in</label>
                         <input type="date" id="checkin-final" class="form-control">
                     </div>
 
-                    <!-- CHECK-OUT -->
                     <div class="col-md-6">
-                        <label class="form-label">
-                            Check-out
-                        </label>
-
+                        <label class="form-label"><i class="bi bi-calendar-x me-2"></i>Check-out</label>
                         <input type="date" id="checkout-final" class="form-control">
                     </div>
 
-                    <!-- ADULTOS -->
                     <div class="col-md-4">
-                        <label class="form-label">
-                            Adultos
-                        </label>
-
+                        <label class="form-label"><i class="bi bi-people me-2"></i>Adultos</label>
                         <input type="number" id="adultos-final" class="form-control" min="1" value="2">
                     </div>
 
-                    <!-- CRIANÇAS -->
                     <div class="col-md-4">
-                        <label class="form-label">
-                            Crianças
-                        </label>
-
+                        <label class="form-label"><i class="bi bi-person-arms-up me-2"></i>Crianças</label>
                         <input type="number" id="criancas-final" class="form-control" min="0" value="0">
                     </div>
 
-                    <!-- PET -->
                     <div class="col-md-4">
-                        <label class="form-label">
-                            Pet pequeno porte?
-                        </label>
-
+                        <label class="form-label"><i class="bi bi-dog me-2"></i>Pet pequeno porte?</label>
                         <select id="pet-final" class="form-select">
-                            <option value="Não">Não</option>
-                            <option value="Sim">Sim</option>
+                            <option value="Não">Não levarei pet</option>
+                            <option value="Sim">Sim, levarei pet</option>
                         </select>
                     </div>
-
                 </div>
 
-                <!-- BOTÃO -->
-                <div class="text-center mt-4">
-
+                <div class="text-center mt-5">
                     <button class="btn-reserva-final" onclick="enviarReservaFinal()">
-
                         <i class="bi bi-whatsapp"></i>
-                        Reservar Agora
-
+                        Verificar Disponibilidade no WhatsApp
                     </button>
-
+                    <p class="text-muted small mt-3">Você será redirecionado para o nosso atendimento humano.</p>
                 </div>
-
             </div>
-
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="./main.js"></script>
 </body>
 

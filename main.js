@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // =========================
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+
+            // Se o link for para outra página (Ex: "index.html#quartos"),
+            // deixa o navegador fazer o redirecionamento normal e sai da função.
+            if (!targetId || !targetId.startsWith('#')) {
+                return; 
+            }
+
             e.preventDefault();
 
             // Remove active
@@ -18,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Ativa clicado
             this.classList.add('active');
 
-            const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
@@ -520,9 +527,23 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.addEventListener('click', function(e) {
             e.stopPropagation(); // Evita que o clique reabra o cartão
             const card = this.closest('.lazer-click-card');
-            card.classList.remove('is-open');
-            card.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(b => b.classList.add('d-none'));
+            if (card) {
+                card.classList.remove('is-open');
+                card.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(b => b.classList.add('d-none'));
+            }
         });
+    });
+
+    // 4. Fechar ao clicar fora de todos os cartões
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lazer-click-card')) {
+            lazerCards.forEach(card => {
+                if (card.classList.contains('is-open')) {
+                    card.classList.remove('is-open');
+                    card.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(b => b.classList.add('d-none'));
+                }
+            });
+        }
     });
 });
 
@@ -539,13 +560,13 @@ document.addEventListener("DOMContentLoaded", function () {
         mm.add("(min-width: 992px)", () => {
             gsap.to("#carousel", {
                 width: "92%",
-                height: "75vh",      // A altura encolhe de forma suave
-                marginTop: "110px", 
+                height: "80svh",      // Encolhe de forma harmoniosa
+                marginTop: "12svh",   // Desce para fugir do menu
                 borderRadius: "24px",
                 borderWidth: 6,
                 borderColor: "rgba(255, 255, 255, 0.45)",
                 scrollTrigger: {
-                    trigger: ".hero-wrapper", // 👈 O gatilho agora é o Wrapper
+                    trigger: ".hero-wrapper", 
                     start: "top top",
                     end: "+=450", 
                     scrub: 1
@@ -557,8 +578,8 @@ document.addEventListener("DOMContentLoaded", function () {
         mm.add("(max-width: 991px)", () => {
             gsap.to("#carousel", {
                 width: "92%",
-                height: "68vh",      // Altura perfeita para o telemóvel
-                marginTop: "90px", 
+                height: "75svh",      // Ajustado perfeitamente para telemóveis
+                marginTop: "12svh", 
                 borderRadius: "24px",
                 borderWidth: 4,
                 borderColor: "rgba(255, 255, 255, 0.45)",
@@ -569,6 +590,53 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrub: 1
                 }
             });
+        });
+    }
+});
+
+/* =========================
+   PAGINAÇÃO MOBILE: AVALIAÇÕES (VER MAIS)
+   ========================= */
+document.addEventListener("DOMContentLoaded", function () {
+    const btnVerMais = document.getElementById("btn-ver-mais");
+    const listaComentarios = document.getElementById("lista-comentarios");
+
+    if (btnVerMais && listaComentarios) {
+        const cards = listaComentarios.querySelectorAll(".card-item");
+        let itensVisiveis = 4; // Quantidade de comentários que aparecem no início no mobile
+
+        function atualizarPaginacao() {
+            // Se for telemóvel / tablet
+            if (window.innerWidth < 992) {
+                cards.forEach((card, index) => {
+                    if (index < itensVisiveis) {
+                        card.style.display = "block"; // Mostra o cartão
+                    } else {
+                        card.style.display = "none";  // Esconde o cartão
+                    }
+                });
+
+                // Se já estiver a mostrar tudo, esconde o botão "Ver mais"
+                if (itensVisiveis >= cards.length) {
+                    btnVerMais.style.display = "none";
+                } else {
+                    btnVerMais.style.display = "inline-block";
+                }
+            } else {
+                // Se for Desktop, mostra TODOS os cartões e garante que o botão não aparece
+                cards.forEach(card => card.style.display = "block");
+                btnVerMais.style.display = "none";
+            }
+        }
+
+        // Executa a verificação assim que a página carrega e se o ecrã for redimensionado
+        atualizarPaginacao();
+        window.addEventListener('resize', atualizarPaginacao);
+
+        // O que acontece quando clicamos no botão
+        btnVerMais.addEventListener("click", function () {
+            itensVisiveis += 4; // Revela mais 4 comentários de cada vez
+            atualizarPaginacao();
         });
     }
 });
