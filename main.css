@@ -478,3 +478,319 @@ footer{
     border: none;
     transition: 0.3s;
 }
+
+/* AVALIAÇÕES */
+#avaliacoes{
+    background: linear-gradient(180deg, #fdfbf7, #f5ebdd);
+}
+
+.card-avaliacao{
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    height: 100%;
+}
+
+.card-avaliacao:hover{
+    transform: translateY(-6px);
+}
+
+.avaliacao-topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.avaliacao-topo h5{
+    margin: 0;
+    font-weight: 600;
+    color: var(--azul-profundo);
+}
+
+.card-avaliacao p{
+    color: #555;
+    line-height: 1.7;
+}
+
+.card-avaliacao small{
+    color: var(--dourado-escuro);
+    font-weight: 600;
+}
+
+.btn-avaliacoes{
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: linear-gradient(
+        135deg,
+        var(--dourado),
+        var(--dourado-escuro)
+    );
+
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-avaliacoes:hover{
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* PÁGINA DE AVALIAÇÕES */
+
+.nota-geral-box{
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    box-shadow: var(--sombra);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.nota-numero{
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        var(--dourado),
+        var(--dourado-escuro)
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nota-card{
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--sombra);
+}
+
+.nota-card h5{
+    margin-bottom: 14px;
+}
+
+.nota-card span{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dourado-escuro);
+}
+
+/* BOTÃO FINAL RESERVA */
+
+.btn-reserva-final{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 16px 36px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #198754,
+        #157347
+    );
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    box-shadow: 0 10px 24px rgba(25,135,84,0.25);
+
+    transition: 0.3s ease;
+}
+
+/* BOX RESERVA FINAL */
+
+.box-reserva-final{
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* =========================
+    CARD AVALIAÇÕES PREMIUM INTERATIVO DESKTOP
+   ========================= */
+
+.card-avaliacao {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    transition: transform 0.18s ease, box-shadow 0.25s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    cursor: pointer;
+}
+
+/* brilho/fundo seguindo mouse */
+.card-avaliacao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(212, 175, 55, 0.22),
+            rgba(212, 175, 55, 0.08) 18%,
+            transparent 42%
+        );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* camada de brilho extra */
+.card-avaliacao::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(255,255,255,0.35),
+            transparent 80%
+        );
+    transform: translateX(-120%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* conteúdo acima do brilho */
+.card-avaliacao > * {
+    position: relative;
+    z-index: 3;
+}
+
+/* desktop hover */
+@media (min-width: 992px) {
+    .card-avaliacao:hover {
+        box-shadow:
+            0 18px 35px rgba(0,0,0,0.14),
+            0 8px 18px rgba(212,175,55,0.18);
+    }
+
+    .card-avaliacao:hover::before {
+        opacity: 1;
+    }
+
+    .card-avaliacao:hover::after {
+        transform: translateX(120%);
+    }
+}
+
+/* mobile/tablet sem efeito pesado */
+@media (max-width: 991px) {
+    .card-avaliacao {
+        transform: none !important;
+    }
+}
+
+/* =========================
+    MOBILE - EFEITO NOTIFICAÇÃO SUBINDO
+   ========================= */
+
+@media (max-width: 991px) {
+
+    .card-avaliacao {
+        opacity: 0;
+        transform: translateY(80px) scale(0.92);
+        filter: blur(8px);
+        transition:
+            opacity 0.65s ease,
+            transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+            filter 0.65s ease,
+            box-shadow 0.4s ease;
+    }
+
+    /* estado visível */
+    .card-avaliacao.show-card {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        box-shadow:
+            0 10px 25px rgba(0,0,0,0.12),
+            0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* visual estilo notificação */
+    .card-avaliacao {
+        border-radius: 18px;
+        background: linear-gradient(
+            135deg,
+            rgba(255,255,255,0.96),
+            rgba(248,248,248,0.98)
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.55);
+    }
+
+    /* efeito pulse curto quando aparece */
+    .card-avaliacao.show-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        animation: notificationGlow 0.8s ease;
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(212,175,55,0.18),
+                transparent 45%
+            );
+    }
+
+    @keyframes notificationGlow {
+        0% {
+            opacity: 0;
+            transform: scale(0.96);
+        }
+        40% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1.02);
+        }
+    }
+
+    /* atraso progressivo estilo várias notificações */
+    .card-avaliacao:nth-child(1) { transition-delay: 0.05s; }
+    .card-avaliacao:nth-child(2) { transition-delay: 0.12s; }
+    .card-avaliacao:nth-child(3) { transition-delay: 0.18s; }
+    .card-avaliacao:nth-child(4) { transition-delay: 0.24s; }
+    .card-avaliacao:nth-child(5) { transition-delay: 0.30s; }
+    .card-avaliacao:nth-child(6) { transition-delay: 0.36s; }
+
+}
