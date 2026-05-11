@@ -17,10 +17,6 @@ body {
     overflow-x: hidden;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--areia);
@@ -29,11 +25,11 @@ body {
 }
 
 /* =========================================
-   HEADER (MENU PRINCIPAL)
+    HEADER (MENU PRINCIPAL)
    ========================================= */
 #cabecalho {
     background: rgba(31, 60, 77, 0.88);
-    backdrop-filter: blur(14px);
+    background: rgba(31,60,77,0.95);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -224,11 +220,27 @@ section {
 img {
     transition: all 0.4s ease;
 }
+@media (min-width: 992px){
 
-img:hover {
-    transform: scale(1.02);
+    .lazer-click-card:hover{
+        transform: translateY(-6px);
+    }
+
+    .lazer-click-card img:hover{
+        transform: scale(1.03);
+    }
+
 }
+@media (max-width: 991px){
 
+    .lazer-click-card,
+    .lazer-click-card img,
+    .lazer-click-card:hover,
+    .lazer-click-card img:hover{
+        transform: none !important;
+    }
+
+}
 /* =========================================
    FUNDOS DE SECÇÃO
    ========================================= */
@@ -550,6 +562,9 @@ img:hover {
     cursor: pointer;
     background: var(--branco);
     transition: height 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .lazer-click-card img {
@@ -1189,7 +1204,6 @@ footer {
     position: relative;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
     background-color: var(--bege);
 }
 
@@ -1219,7 +1233,6 @@ footer {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
     border: 4px solid var(--branco);
     background-color: var(--branco);
-    overflow: hidden;
     will-change: transform, opacity, width, height;
 }
 
@@ -1464,4 +1477,40 @@ footer {
 .lazer-hover-overlay {
     will-change: transform;
     transform: translateZ(0);
+}
+
+@media (max-width: 991px){
+
+    *{
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    header img:hover {
+    transform: scale(1.03);
+    }
+
+    .carousel-indicators .active {
+    opacity: 1 !important;
+    background-color: var(--dourado) !important;
+    transform: scale(1.4);
+    /* Dá um efeito de destaque 3D */
+    }
+
+    .img-main-container:hover .quarto-img-main {
+    transform: scale(1.03);
+    }
+
+    .lazer-click-card img:hover{
+        transform: scale(1.03);
+    }
+
+    header img:hover {
+    transform: scale(1.03);
+}
+
 }
