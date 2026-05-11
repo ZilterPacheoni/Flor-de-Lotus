@@ -10,13 +10,16 @@
     --sombra: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -45,7 +48,9 @@ header img {
     transition: transform 0.3s ease;
 }
 
-header img:hover { transform: scale(1.03); }
+header img:hover {
+    transform: scale(1.03);
+}
 
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.85);
@@ -57,7 +62,8 @@ header img:hover { transform: scale(1.03); }
     font-weight: 500;
     border-radius: 30px;
     padding: 10px 18px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 #cabecalho .nav .nav-link:hover {
@@ -87,24 +93,35 @@ body.pag-interna {
     padding-bottom: 5px !important;
 }
 
-.pag-interna #cabecalho .nav-link { color: var(--branco) !important; }
-.pag-interna #cabecalho .nav-link:hover { color: var(--dourado) !important; }
+.pag-interna #cabecalho .nav-link {
+    color: var(--branco) !important;
+}
+
+.pag-interna #cabecalho .nav-link:hover {
+    color: var(--dourado) !important;
+}
+
 .pag-interna #cabecalho .nav-pills .nav-link.active {
     background-color: var(--dourado) !important;
     color: var(--azul-profundo) !important;
 }
-.pag-interna #cabecalho .nav-pills .nav-link.active i { color: var(--azul-profundo) !important; }
+
+.pag-interna #cabecalho .nav-pills .nav-link.active i {
+    color: var(--azul-profundo) !important;
+}
 
 /* =========================================
    HERO E WRAPPER (ESTABILIZADOR DE SCROLL)
    ========================================= */
 .hero-wrapper {
     width: 100%;
-    height: 100svh; /* Ocupa a tela toda de forma segura no telemóvel */
+    height: 100svh;
+    /* Ocupa a tela toda de forma segura no telemóvel */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: var(--bege); /* 👈 Fundo sólido para destacar o cartão quando ele encolhe! */
+    background-color: var(--bege);
+    /* 👈 Fundo sólido para destacar o cartão quando ele encolhe! */
 }
 
 #carousel {
@@ -114,7 +131,7 @@ body.pag-interna {
     border-radius: 0px;
     overflow: hidden;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
-    border: 0px solid rgba(255, 255, 255, 0); 
+    border: 0px solid rgba(255, 255, 255, 0);
     will-change: width, height, border-radius, margin-top;
 }
 
@@ -127,7 +144,7 @@ body.pag-interna {
 
 .img-custom {
     width: 100% !important;
-    height: 100% !important; 
+    height: 100% !important;
     object-fit: cover !important;
     filter: brightness(0.72);
 }
@@ -136,8 +153,9 @@ body.pag-interna {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center; /* Volta a centrar perfeitamente na área visível */
-    padding: 20px; 
+    align-items: center;
+    /* Volta a centrar perfeitamente na área visível */
+    padding: 20px;
     justify-content: center;
     text-align: center;
 }
@@ -188,13 +206,28 @@ body.pag-interna {
     color: var(--azul-profundo);
     margin-bottom: 25px;
 }
-.section-tittle span { color: var(--dourado); }
-.text-colored { color: var(--azul-profundo); font-weight: 600; }
 
-section { padding-top: 90px; padding-bottom: 90px; }
+.section-tittle span {
+    color: var(--dourado);
+}
 
-img { transition: all 0.4s ease; }
-img:hover { transform: scale(1.02); }
+.text-colored {
+    color: var(--azul-profundo);
+    font-weight: 600;
+}
+
+section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+img {
+    transition: all 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
 
 /* =========================================
    FUNDOS DE SECÇÃO
@@ -204,11 +237,26 @@ img:hover { transform: scale(1.02); }
     background: linear-gradient(rgba(250, 248, 243, 0.72), rgba(245, 235, 221, 0.82)), url('./img Pousada/interiorpousada.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
-#praias { background: linear-gradient(180deg, #f8f4eb, #fdfbf7); }
-#quartos, #area-de-lazer { background: var(--bege); }
-#avaliacoes { background: linear-gradient(180deg, #fdfbf7, #f5ebdd); }
+
+#praias {
+    background: linear-gradient(180deg, #f8f4eb, #fdfbf7);
+}
+
+#quartos,
+#area-de-lazer {
+    background: var(--bege);
+}
+
+#avaliacoes {
+    background: linear-gradient(180deg, #fdfbf7, #f5ebdd);
+}
+
+#avaliacoes::before,
+#avaliacoes::after,
+.ramo {
+    will-change: transform;
+}
 
 /* =========================================
    SOBRE A POUSADA
@@ -227,7 +275,10 @@ img:hover { transform: scale(1.02); }
 }
 
 @media (min-width: 1200px) {
-    .foto-sobre-pousada { max-width: 620px; height: 480px; }
+    .foto-sobre-pousada {
+        max-width: 620px;
+        height: 480px;
+    }
 }
 
 /* =========================================
@@ -256,7 +307,9 @@ img:hover { transform: scale(1.02); }
     transition: transform 0.4s ease;
 }
 
-.img-main-container:hover .quarto-img-main { transform: scale(1.03); }
+.img-main-container:hover .quarto-img-main {
+    transform: scale(1.03);
+}
 
 .img-thumbs-container {
     flex: 1;
@@ -282,18 +335,61 @@ img:hover { transform: scale(1.02); }
     transition: all 0.2s ease;
 }
 
-.quarto-amenities { list-style: none; padding: 0; margin-top: 15px; }
-.quarto-amenities li { margin-bottom: 10px; color: var(--azul-profundo); font-size: 0.95rem; }
-.quarto-amenities i { color: var(--dourado); margin-right: 10px; font-size: 1.1rem; }
+.quarto-amenities {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.quarto-amenities li {
+    margin-bottom: 10px;
+    color: var(--azul-profundo);
+    font-size: 0.95rem;
+}
+
+.quarto-amenities i {
+    color: var(--dourado);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
 
 /* Animações Thumbs Desktop */
-.animate-thumb-1 { animation: thumbToMain 0.4s forwards ease-in-out; }
-.animate-thumb-2 { animation: thumbShift 0.4s forwards ease-in-out; }
-.fade-in-thumb { animation: thumbFadeIn 0.4s forwards ease-out; }
+.animate-thumb-1 {
+    animation: thumbToMain 0.4s forwards ease-in-out;
+}
 
-@keyframes thumbToMain { to { transform: translateX(-60px) scale(1.05); opacity: 0; } }
-@keyframes thumbShift { to { transform: translateY(calc(-100% - 12px)); } }
-@keyframes thumbFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-thumb-2 {
+    animation: thumbShift 0.4s forwards ease-in-out;
+}
+
+.fade-in-thumb {
+    animation: thumbFadeIn 0.4s forwards ease-out;
+}
+
+@keyframes thumbToMain {
+    to {
+        transform: translateX(-60px) scale(1.05);
+        opacity: 0;
+    }
+}
+
+@keyframes thumbShift {
+    to {
+        transform: translateY(calc(-100% - 12px));
+    }
+}
+
+@keyframes thumbFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 /* =========================================
@@ -308,13 +404,15 @@ img:hover { transform: scale(1.02); }
     border: 1px solid rgba(200, 169, 107, 0.25);
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
     border-radius: 14px;
     padding: 12px;
     border: 1px solid rgba(31, 60, 77, 0.15);
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--dourado);
     box-shadow: 0 0 10px rgba(200, 169, 107, 0.25);
 }
@@ -329,7 +427,10 @@ img:hover { transform: scale(1.02); }
     transition: all 0.3s ease;
 }
 
-.btn-reservar:hover { transform: translateY(-2px); color: white;}
+.btn-reservar:hover {
+    transform: translateY(-2px);
+    color: white;
+}
 
 .campo-tamanho-igual {
     height: 52px !important;
@@ -353,32 +454,77 @@ img:hover { transform: scale(1.02); }
 /* =========================================
    PRAIAS
    ========================================= */
-.nav-praias .nav-link { border-radius: 14px; margin-bottom: 8px; transition: all 0.3s ease; }
-.nav-praias .nav-link.active { background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro)); color: white; }
-.nav-praias .nav-link:hover { background: rgba(200, 169, 107, 0.12); }
-.col-md-3 img { width: 100%; border-radius: 18px; box-shadow: var(--sombra); }
+.nav-praias .nav-link {
+    border-radius: 14px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-praias .nav-link.active {
+    background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
+    color: white;
+}
+
+.nav-praias .nav-link:hover {
+    background: rgba(200, 169, 107, 0.12);
+}
+
+.col-md-3 img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
 
 .praias-dropdown-box {
-    background: white; padding: 18px; border-radius: 18px;
-    box-shadow: var(--sombra); border: 1px solid rgba(200, 169, 107, 0.35);
+    background: white;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(200, 169, 107, 0.35);
 }
-.praias-dropdown { border-radius: 14px; padding: 12px; border: 1px solid var(--dourado); }
+
+.praias-dropdown {
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid var(--dourado);
+}
 
 /* =========================================
    FALE CONOSCO E MAPA
    ========================================= */
 #fale-conosco .btn-enviar {
-    background-color: #157347; color: white; border: none; transition: 0.3s;
+    background-color: #157347;
+    color: white;
+    border: none;
+    transition: 0.3s;
 }
+
 #fale-conosco .btn-enviar:hover {
-    background-color: #198754 !important; transform: translateY(-2px);
+    background-color: #198754 !important;
+    transform: translateY(-2px);
 }
 
-.social-links li { list-style: none; display: inline-block; margin-right: 12px; }
-.social-links a { text-decoration: none; font-size: 2rem; color: var(--azul-profundo); transition: all 0.3s ease; }
-.social-links a:hover { color: var(--dourado); }
+.social-links li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 12px;
+}
 
-.mapa-container iframe { border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); }
+.social-links a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--azul-profundo);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--dourado);
+}
+
+.mapa-container iframe {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
 
 /* =========================================
@@ -387,11 +533,14 @@ img:hover { transform: scale(1.02); }
 #area-de-lazer {
     background-color: var(--bege) !important;
     padding-top: 80px !important;
-    padding-bottom: 140px !important; 
+    padding-bottom: 140px !important;
     position: relative;
 }
 
-#area-de-lazer .container { position: relative; z-index: 10; }
+#area-de-lazer .container {
+    position: relative;
+    z-index: 10;
+}
 
 .lazer-click-card {
     position: relative;
@@ -403,50 +552,112 @@ img:hover { transform: scale(1.02); }
     transition: height 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
 }
 
-.lazer-click-card img { object-fit: cover; transition: transform 0.5s ease; }
+.lazer-click-card img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
 .lazer-hover-overlay {
-    position: absolute; inset: 0;
-    background: rgba(31, 60, 77, 0.4); 
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 60, 77, 0.4);
     backdrop-filter: blur(5px);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.3s ease; z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
 }
-.lazer-click-card:not(.is-open):hover .lazer-hover-overlay { opacity: 1; }
+
+.lazer-click-card:not(.is-open):hover .lazer-hover-overlay {
+    opacity: 1;
+}
 
 .lazer-hover-overlay span {
-    color: white; font-weight: 500; font-size: 1.1rem;
-    transform: translateY(15px); transition: transform 0.3s ease;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transform: translateY(15px);
+    transition: transform 0.3s ease;
 }
-.lazer-click-card:not(.is-open):hover .lazer-hover-overlay span { transform: translateY(0); }
+
+.lazer-click-card:not(.is-open):hover .lazer-hover-overlay span {
+    transform: translateY(0);
+}
 
 .lazer-card-content {
-    position: absolute; bottom: 0; left: 0; width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 60px 20px 25px;
-    background: linear-gradient(to top, rgba(31,60,77, 0.95) 15%, transparent 100%);
-    z-index: 10; transition: background 0.5s ease;
+    background: linear-gradient(to top, rgba(31, 60, 77, 0.95) 15%, transparent 100%);
+    z-index: 10;
+    transition: background 0.5s ease;
 }
 
-.lazer-description { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.5s ease; }
+.lazer-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
 
-.lazer-click-card.is-open { height: 480px; cursor: default; box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
-.lazer-click-card.is-open .lazer-card-content { background: rgba(31,60,77, 0.92); padding-top: 25px; }
-.lazer-click-card.is-open .lazer-description { max-height: 200px; opacity: 1; }
+.lazer-click-card.is-open {
+    height: 480px;
+    cursor: default;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.lazer-click-card.is-open .lazer-card-content {
+    background: rgba(31, 60, 77, 0.92);
+    padding-top: 25px;
+}
+
+.lazer-click-card.is-open .lazer-description {
+    max-height: 200px;
+    opacity: 1;
+}
 
 .btn-close-card {
-    position: absolute; top: 15px; right: 15px;
-    background: rgba(255,255,255,0.25); border: none; color: white;
-    border-radius: 50%; width: 35px; height: 35px;
-    display: none; z-index: 20; backdrop-filter: blur(5px);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: none;
+    z-index: 20;
+    backdrop-filter: blur(5px);
 }
-.lazer-click-card.is-open .btn-close-card { display: block; }
-.btn-close-card:hover { background: var(--dourado); }
+
+.lazer-click-card.is-open .btn-close-card {
+    display: block;
+}
+
+.btn-close-card:hover {
+    background: var(--dourado);
+}
 
 .lazer-wave-bottom {
-    position: absolute; bottom: -1px; left: 0; width: 100%;
-    overflow: hidden; line-height: 0; z-index: 1; 
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
 }
-.lazer-wave-bottom svg { display: block; width: calc(100% + 1.3px); height: 60px; }
+
+.lazer-wave-bottom svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
 
 
 /* =========================================
@@ -466,125 +677,302 @@ img:hover { transform: scale(1.02); }
     cursor: pointer;
 }
 
-.avaliacao-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-.avaliacao-topo h5 { margin: 0; font-weight: 600; color: var(--azul-profundo); }
-.card-avaliacao p { color: #555; line-height: 1.7; }
-.card-avaliacao small { color: var(--dourado-escuro); font-weight: 600; }
+.avaliacao-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.avaliacao-topo h5 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--azul-profundo);
+}
+
+.card-avaliacao p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.card-avaliacao small {
+    color: var(--dourado-escuro);
+    font-weight: 600;
+}
 
 .btn-avaliacoes {
-    display: inline-block; padding: 14px 30px; border-radius: 30px;
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
     background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
-    color: white; text-decoration: none; font-weight: 600; transition: 0.3s ease;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
-.btn-avaliacoes:hover { transform: translateY(-3px); color: white; }
+
+.btn-avaliacoes:hover {
+    transform: translateY(-3px);
+    color: white;
+}
 
 /* Efeito Hover 3D (Desktop) */
 .card-avaliacao::before {
-    content: ""; position: absolute; inset: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
     background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.22), rgba(212, 175, 55, 0.08) 18%, transparent 42%);
-    opacity: 0; transition: opacity 0.25s ease; pointer-events: none; z-index: 1;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 1;
 }
+
 .card-avaliacao::after {
-    content: ""; position: absolute; inset: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
     background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.35), transparent 80%);
-    transform: translateX(-120%); transition: transform 0.6s ease; pointer-events: none; z-index: 2;
+    transform: translateX(-120%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
 }
-.card-avaliacao > * { position: relative; z-index: 3; }
+
+.card-avaliacao>* {
+    position: relative;
+    z-index: 3;
+}
 
 @media (min-width: 992px) {
-    .card-avaliacao:hover { box-shadow: 0 18px 35px rgba(0, 0, 0, 0.14), 0 8px 18px rgba(212, 175, 55, 0.18); }
-    .card-avaliacao:hover::before { opacity: 1; }
-    .card-avaliacao:hover::after { transform: translateX(120%); }
+    .card-avaliacao:hover {
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.14), 0 8px 18px rgba(212, 175, 55, 0.18);
+    }
+
+    .card-avaliacao:hover::before {
+        opacity: 1;
+    }
+
+    .card-avaliacao:hover::after {
+        transform: translateX(120%);
+    }
 }
 
 
 /* =========================================
    ELEMENTOS PÁGINA INTERNA DE AVALIAÇÕES 
    ========================================= */
-.container-cards-overlap { margin-top: -60px; position: relative; z-index: 20; }
+.container-cards-overlap {
+    margin-top: -60px;
+    position: relative;
+    z-index: 20;
+}
 
 .nota-geral-box {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.318);
-    border-radius: 15px; display: inline-flex; align-items: center; padding: 20px 30px; gap: 20px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    padding: 20px 30px;
+    gap: 20px;
 }
+
 .nota-numero {
-    color: #ffffff; font-weight: 800; font-size: 1.5rem; padding: 10px 15px; border-radius: 10px;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 10px;
     background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
 }
 
-.nota-card { background: white; border-radius: 20px; padding: 24px; text-align: center; box-shadow: var(--sombra); }
-.nota-card h5 { margin-bottom: 14px; }
-.nota-card span { font-size: 2rem; font-weight: bold; color: var(--dourado-escuro); }
+.nota-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--sombra);
+}
+
+.nota-card h5 {
+    margin-bottom: 14px;
+}
+
+.nota-card span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dourado-escuro);
+}
 
 .nota-card.borda-personalizada {
     background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
 }
 
 .secao-avaliacoes-premium {
-    position: relative; overflow: hidden;
-    border-top: 1px solid rgba(212, 175, 55, 0.15); border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
-.secao-avaliacoes-premium::before, .secao-avaliacoes-premium::after,
-.section-notas-fundo::before, .section-notas-fundo::after {
-    content: ""; position: absolute; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0) 20%, rgba(212, 175, 55, 0.8) 50%, rgba(212, 175, 55, 0) 80%, transparent 100%);
-    background-size: 200% 100%; animation: linhaDeLuz 6s linear infinite; z-index: 10;
-}
-.secao-avaliacoes-premium::before, .section-notas-fundo::before { top: 0; }
-.secao-avaliacoes-premium::after, .section-notas-fundo::after { bottom: 0; }
 
-@keyframes linhaDeLuz { 0% { background-position: 200% 0%; } 100% { background-position: -200% 0%; } }
+.secao-avaliacoes-premium::before,
+.secao-avaliacoes-premium::after,
+.section-notas-fundo::before,
+.section-notas-fundo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0) 20%, rgba(212, 175, 55, 0.8) 50%, rgba(212, 175, 55, 0) 80%, transparent 100%);
+    background-size: 200% 100%;
+    animation: linhaDeLuz 6s linear infinite;
+    z-index: 10;
+}
+
+.secao-avaliacoes-premium::before,
+.section-notas-fundo::before {
+    top: 0;
+}
+
+.secao-avaliacoes-premium::after,
+.section-notas-fundo::after {
+    bottom: 0;
+}
+
+@keyframes linhaDeLuz {
+    0% {
+        background-position: 200% 0%;
+    }
+
+    100% {
+        background-position: -200% 0%;
+    }
+}
 
 .section-notas-fundo {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('FotoPraia.jpg');
-    background-size: cover; background-position: center; background-attachment: fixed;
-    color: #ffffff; border-bottom: 2px solid #d4af37 !important; position: relative; z-index: 10;
-    padding-top: 140px !important; /* Compensa a altura do cabeçalho fixo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    border-bottom: 2px solid #d4af37 !important;
+    position: relative;
+    z-index: 10;
+    padding-top: 140px !important;
+    /* Compensa a altura do cabeçalho fixo */
     padding-bottom: 100px !important;
 }
-.section-notas-fundo p { font-weight: 500; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 700px; margin: 0 auto; }
+
+.section-notas-fundo p {
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+}
 
 .section-reserva-fundo {
     position: relative;
     background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('FotoNoite.jpg');
-    background-attachment: fixed; background-size: cover; background-position: center; padding-top: 50px; overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px;
+    overflow: hidden;
 }
 
 /* =========================================
    CAIXA DE RESERVA FINAL (WHATSAPP)
    ========================================= */
 .box-reserva-final {
-    background: white; padding: 35px; border-radius: 24px; box-shadow: var(--sombra); max-width: 900px; margin: 0 auto;
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+    max-width: 900px;
+    margin: 0 auto;
 }
-.box-reserva-final h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--azul-profundo); font-size: 1.8rem; }
+
+.box-reserva-final h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--azul-profundo);
+    font-size: 1.8rem;
+}
+
 .box-reserva-final .form-label {
-    font-weight: 600; color: var(--azul-medio); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--azul-medio);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
-.box-reserva-final .form-control, .box-reserva-final .form-select {
-    border: 2px solid #f1f1f1; border-radius: 12px; padding: 12px 15px; background-color: #fcfcfc; transition: all 0.3s ease; color: var(--azul-profundo);
+
+.box-reserva-final .form-control,
+.box-reserva-final .form-select {
+    border: 2px solid #f1f1f1;
+    border-radius: 12px;
+    padding: 12px 15px;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+    color: var(--azul-profundo);
 }
+
 .btn-reserva-final {
-    background: linear-gradient(135deg, #198754, #157347); color: white; border: none; padding: 16px 40px; border-radius: 50px;
-    font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.4s ease; display: inline-flex; align-items: center; gap: 12px;
-    box-shadow: 0 10px 20px rgba(25, 135, 84, 0.2); cursor: pointer; text-decoration: none; font-size: 1.1rem;
+    background: linear-gradient(135deg, #198754, #157347);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 20px rgba(25, 135, 84, 0.2);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
-.btn-reserva-final:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(25, 135, 84, 0.3); filter: brightness(1.1); color: white; }
+
+.btn-reserva-final:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(25, 135, 84, 0.3);
+    filter: brightness(1.1);
+    color: white;
+}
 
 
 /* =========================================
    FOOTER GERAL
    ========================================= */
 footer {
-    text-align: center; background: var(--azul-profundo); color: white;
-    padding: 30px 15px; font-size: 0.95rem; letter-spacing: 0.5px;
+    text-align: center;
+    background: var(--azul-profundo);
+    color: white;
+    padding: 30px 15px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -593,76 +981,266 @@ footer {
    ========================================= */
 
 @media (max-width: 991px) {
-    header img { width: 170px; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .hero-content p { font-size: 1rem; }
-    
-    .pag-interna #menu-navegacao {
-        background-color: var(--azul-profundo) !important;
-        border: 1px solid rgba(200, 169, 107, 0.2); margin-top: 10px; border-radius: 12px; padding: 15px;
+    header img {
+        width: 170px;
     }
 
-    .mapa-container iframe { height: 350px !important; min-height: 350px !important; }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .pag-interna #menu-navegacao {
+        background-color: var(--azul-profundo) !important;
+        border: 1px solid rgba(200, 169, 107, 0.2);
+        margin-top: 10px;
+        border-radius: 12px;
+        padding: 15px;
+    }
+
+    .mapa-container iframe {
+        height: 350px !important;
+        min-height: 350px !important;
+    }
 
     /* Galeria Quartos Mobile */
-    .quarto-gallery { display: flex !important; flex-direction: column !important; gap: 12px !important; height: auto !important; }
-    .img-main-container { width: 100% !important; height: 250px !important; margin-bottom: 0 !important; }
-    .img-main-container .carousel-inner, .img-main-container .carousel-item { height: 100% !important; }
-    .quarto-img-main { height: 100% !important; object-fit: cover !important; }
-    .img-thumbs-container { display: flex !important; flex-direction: row !important; gap: 12px !important; width: 100% !important; height: 120px !important; margin-top: 0 !important; }
-    .quarto-img-thumb { flex: 1 !important; width: 100% !important; height: 120px !important; object-fit: cover !important; }
+    .quarto-gallery {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        height: auto !important;
+    }
+
+    .img-main-container {
+        width: 100% !important;
+        height: 250px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .img-main-container .carousel-inner,
+    .img-main-container .carousel-item {
+        height: 100% !important;
+    }
+
+    .quarto-img-main {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .img-thumbs-container {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        width: 100% !important;
+        height: 120px !important;
+        margin-top: 0 !important;
+    }
+
+    .quarto-img-thumb {
+        flex: 1 !important;
+        width: 100% !important;
+        height: 120px !important;
+        object-fit: cover !important;
+    }
 
     /* Animações Thumbs Mobile */
-    @keyframes thumbToMain { to { transform: translateY(-50px) scale(1.05); opacity: 0; } }
-    @keyframes thumbShift { to { transform: translateX(calc(-100% - 12px)); } }
-    @keyframes thumbFadeIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes thumbToMain {
+        to {
+            transform: translateY(-50px) scale(1.05);
+            opacity: 0;
+        }
+    }
+
+    @keyframes thumbShift {
+        to {
+            transform: translateX(calc(-100% - 12px));
+        }
+    }
+
+    @keyframes thumbFadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
     /* Avaliações Mobile */
     .card-avaliacao {
-        opacity: 0; transform: translateY(80px) scale(0.92); filter: blur(8px);
+        opacity: 0;
+        transform: translateY(80px) scale(0.92);
+        filter: blur(8px);
         transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease, box-shadow 0.4s ease;
-        border-radius: 18px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 248, 248, 0.98));
-        backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 248, 248, 0.98));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.55);
     }
-    .card-avaliacao.show-card { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08); }
+
+    .card-avaliacao.show-card {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
     .card-avaliacao.show-card::after {
-        content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-        animation: notificationGlow 0.8s ease; background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.18), transparent 45%);
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        animation: notificationGlow 0.8s ease;
+        background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.18), transparent 45%);
     }
 
-    @keyframes notificationGlow { 0% { opacity: 0; transform: scale(0.96); } 40% { opacity: 1; } 100% { opacity: 0; transform: scale(1.02); } }
+    @keyframes notificationGlow {
+        0% {
+            opacity: 0;
+            transform: scale(0.96);
+        }
 
-    .card-avaliacao:nth-child(1) { transition-delay: 0.05s; }
-    .card-avaliacao:nth-child(2) { transition-delay: 0.12s; }
-    .card-avaliacao:nth-child(3) { transition-delay: 0.18s; }
-    .card-avaliacao:nth-child(4) { transition-delay: 0.24s; }
-    .card-avaliacao:nth-child(5) { transition-delay: 0.30s; }
-    .card-avaliacao:nth-child(6) { transition-delay: 0.36s; }
+        40% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(1.02);
+        }
+    }
+
+    .card-avaliacao:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    .card-avaliacao:nth-child(2) {
+        transition-delay: 0.12s;
+    }
+
+    .card-avaliacao:nth-child(3) {
+        transition-delay: 0.18s;
+    }
+
+    .card-avaliacao:nth-child(4) {
+        transition-delay: 0.24s;
+    }
+
+    .card-avaliacao:nth-child(5) {
+        transition-delay: 0.30s;
+    }
+
+    .card-avaliacao:nth-child(6) {
+        transition-delay: 0.36s;
+    }
 }
 
 @media (max-width: 767px) {
-    section { padding-top: 70px; padding-bottom: 70px; }
-    .foto-sobre-pousada { max-width: 92%; height: 220px; border-radius: 18px; padding: 5px; margin-bottom: 24px; }
-    .reserva-box { padding: 16px; }
-    #praias .tab-pane .col-md-3 { padding: 6px; margin-bottom: 14px; }
-    #praias .voltar-menu-praias { width: 100%; border-radius: 30px; }
-    .container-cards-overlap { margin-top: -30px; }
+    section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .foto-sobre-pousada {
+        max-width: 92%;
+        height: 220px;
+        border-radius: 18px;
+        padding: 5px;
+        margin-bottom: 24px;
+    }
+
+    .reserva-box {
+        padding: 16px;
+    }
+
+    #praias .tab-pane .col-md-3 {
+        padding: 6px;
+        margin-bottom: 14px;
+    }
+
+    #praias .voltar-menu-praias {
+        width: 100%;
+        border-radius: 30px;
+    }
+
+    .container-cards-overlap {
+        margin-top: -30px;
+    }
 }
 
 @media (min-width: 992px) {
-    #praias .tab-content { padding-top: 70px; }
+    #praias .tab-content {
+        padding-top: 70px;
+    }
 }
 
 /* =========================================
    ÁREA DE LAZER (VERSÃO ANTIGA - GSAP SCROLL)
    ========================================= */
 /* Mantida intocada para caso uses noutra página, para não quebrar */
-.lazer-scroll-container { position: relative; height: 100vh; width: 100%; overflow: hidden; background-color: var(--bege); }
-.lazer-title-container { position: absolute; top: 8%; left: 0; width: 100%; z-index: 40; }
-.lazer-images-wrapper { position: absolute; width: 100%; height: 100%; z-index: 20; }
-.lazer-img-item { position: absolute; top: 50%; left: 50%; width: 340px; height: 480px; object-fit: cover; border-radius: 20px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); border: 4px solid var(--branco); background-color: var(--branco); overflow: hidden; will-change: transform, opacity, width, height; }
-.lazer-texts-wrapper { position: absolute; top: 50%; left: 55vw; width: 35vw; transform: translateY(-50%); pointer-events: none; z-index: 30; }
-.lazer-text-item { position: absolute; top: 50%; left: 0; width: 100%; visibility: hidden; transform: translateY(-50%); }
+.lazer-scroll-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bege);
+}
+
+.lazer-title-container {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+}
+
+.lazer-images-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.lazer-img-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    border: 4px solid var(--branco);
+    background-color: var(--branco);
+    overflow: hidden;
+    will-change: transform, opacity, width, height;
+}
+
+.lazer-texts-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 55vw;
+    width: 35vw;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 30;
+}
+
+.lazer-text-item {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    transform: translateY(-50%);
+}
 
 /* =========================================
    CORREÇÃO E ESTILO: PAGINAÇÃO DO CARROSSEL
@@ -677,14 +1255,15 @@ footer {
 
 /* Levanta a paginação para não ser cortada pela borda redonda do mobile */
 .carousel-indicators {
-    margin-bottom: 25px !important; 
+    margin-bottom: 25px !important;
 }
 
 /* Estilo Premium para as bolinhas (Dots) */
 .carousel-indicators [data-bs-target] {
     width: 10px !important;
     height: 10px !important;
-    border-radius: 50% !important; /* Deixa as bolinhas perfeitamente redondas */
+    border-radius: 50% !important;
+    /* Deixa as bolinhas perfeitamente redondas */
     background-color: var(--branco) !important;
     opacity: 0.5;
     border: none !important;
@@ -696,45 +1275,48 @@ footer {
 .carousel-indicators .active {
     opacity: 1 !important;
     background-color: var(--dourado) !important;
-    transform: scale(1.4); /* Dá um efeito de destaque 3D */
+    transform: scale(1.4);
+    /* Dá um efeito de destaque 3D */
 }
 
 /* O card com efeito Blur SUTIL e MAIS TRANSPARENTE */
 .box-reserva-final {
     /* MUDANÇA: Fundo branco MUITO MAIS TRANSPARENTE (de 0.15 para 0.05) */
-    background: rgba(255, 255, 255, 0); 
-    
+    background: rgba(255, 255, 255, 0);
+
     /* MUDANÇA: O efeito de desfoque MUITO MAIS FRACO (de 15px para 5px) */
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); /* Suporte para Safari */
-    
+    -webkit-backdrop-filter: blur(5px);
+    /* Suporte para Safari */
+
     /* Borda ainda mais sutil e clara para definir o card */
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    
+
     /* Sombra mais suave para não pesar no visual transparente */
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.751);
-    
+
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
-    
+
     /* Garante que os textos de label e título sejam brancos para contraste */
     color: rgba(255, 255, 255, 0);
 }
 
 /* Garantindo que o título e labels fiquem brancos dentro do card */
-.box-reserva-final h3, 
+.box-reserva-final h3,
 .box-reserva-final label {
     color: #ffffff !important;
 }
 
 /* MUDANÇA: Os inputs também ficam mais transparentes e integrados */
-.box-reserva-final .form-control, 
+.box-reserva-final .form-control,
 .box-reserva-final .form-select {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white; /* Texto digitado em branco */
+    color: white;
+    /* Texto digitado em branco */
     transition: all 0.3s ease;
 }
 
@@ -756,7 +1338,8 @@ footer {
     background-color: rgba(255, 255, 255, 0.15) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: white !important; /* Texto branco no estado normal */
+    color: white !important;
+    /* Texto branco no estado normal */
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     padding: 10px 15px;
@@ -766,19 +1349,21 @@ footer {
 /* Isso segmenta as tags <option> para corrigir o bug */
 .box-reserva-final select.form-select option {
     /* Força o fundo a ser branco para o menu suspenso */
-    background-color: #ffffff !important; 
-    
+    background-color: #ffffff !important;
+
     /* Força o texto a ser preto para garantir legibilidade completa */
     color: #000000 !important;
-    
+
     /* Remove o blur apenas das opções para evitar problemas de renderização */
     backdrop-filter: none;
 }
 
 /* 1. MANTÉM OS TÍTULOS VISÍVEIS (Escuros e Fortes) */
 .nota-card h5 {
-    color: #2c3e50 !important; /* Cor escura para contraste */
-    font-weight: 700 !important; /* Negrito para não "sumir" */
+    color: #2c3e50 !important;
+    /* Cor escura para contraste */
+    font-weight: 700 !important;
+    /* Negrito para não "sumir" */
     font-size: 1.1rem;
     margin-bottom: 5px;
     opacity: 1 !important;
@@ -787,30 +1372,96 @@ footer {
 /* 2. VOLTA OS NÚMEROS AO ESTILO ORIGINAL */
 .nota-card span {
     /* Removemos o negrito pesado e o tamanho exagerado */
-    color: #d4af37 !important; /* Cor dourada original */
-    font-weight: 500 !important; /* Peso médio/fino, como estava antes */
-    font-size: 1.4rem !important; /* Tamanho original mais equilibrado */
+    color: #d4af37 !important;
+    /* Cor dourada original */
+    font-weight: 500 !important;
+    /* Peso médio/fino, como estava antes */
+    font-size: 1.4rem !important;
+    /* Tamanho original mais equilibrado */
     display: block;
 }
 
 /* 3. GARANTE QUE O CARD NÃO ESTEJA TRANSPARENTE DEMAIS */
 .nota-card {
-    background-color: #ffffff !important; /* Fundo branco sólido ou levemente opaco */
+    background-color: #ffffff !important;
+    /* Fundo branco sólido ou levemente opaco */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra leve para destacar do fundo da praia */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra leve para destacar do fundo da praia */
 }
 
 #btn-ver-mais {
-        border-color: #d4af37;
-        color: #d4af37;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
+    border-color: #d4af37;
+    color: #d4af37;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
 
 /* Efeito de passar o cursor (Dourado) */
-    #btn-ver-mais:hover, #btn-ver-mais:active {
-        background-color: #d4af37 !important;
-        border-color: #d4af37 !important;
-        color: #ffffff !important;
+#btn-ver-mais:hover,
+#btn-ver-mais:active {
+    background-color: #d4af37 !important;
+    border-color: #d4af37 !important;
+    color: #ffffff !important;
+}
+
+/* REMOVE BLUR NO MOBILE/TABLET */
+@media (max-width: 991px) {
+
+    .card-avaliacao {
+        transform: none !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+
+        opacity: 1 !important;
     }
+
+}
+
+@media (max-width: 768px) {
+
+    #sobre-a-pousada {
+        background-attachment: scroll;
+    }
+
+}
+
+.btn-close-card {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+
+    .lazer-click-card,
+    .lazer-hover-overlay,
+    .card-avaliacao,
+    .avaliacoes-wrapper {
+
+        backdrop-filter: none !important;
+        filter: none !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .lazer-click-card:hover {
+        transform: none !important;
+    }
+
+}
+
+.lazer-click-card,
+.card-avaliacao,
+.lazer-hover-overlay {
+    will-change: transform;
+    transform: translateZ(0);
+}

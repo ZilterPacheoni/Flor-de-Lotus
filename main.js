@@ -594,49 +594,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/* =========================
-   PAGINAÇÃO MOBILE: AVALIAÇÕES (VER MAIS)
-   ========================= */
 document.addEventListener("DOMContentLoaded", function () {
+    const lista = document.getElementById("lista-comentarios");
     const btnVerMais = document.getElementById("btn-ver-mais");
-    const listaComentarios = document.getElementById("lista-comentarios");
 
-    if (btnVerMais && listaComentarios) {
-        const cards = listaComentarios.querySelectorAll(".card-item");
-        let itensVisiveis = 4; // Quantidade de comentários que aparecem no início no mobile
+    // Se não estiver na página de avaliações, encerra aqui
+    if (!lista || !btnVerMais) return;
 
-        function atualizarPaginacao() {
-            // Se for telemóvel / tablet
-            if (window.innerWidth < 992) {
-                cards.forEach((card, index) => {
-                    if (index < itensVisiveis) {
-                        card.style.display = "block"; // Mostra o cartão
-                    } else {
-                        card.style.display = "none";  // Esconde o cartão
-                    }
-                });
+    // Buscamos os itens que têm a classe card-item
+    const cards = lista.querySelectorAll(".card-item");
+    let itensVisiveis = 4;
 
-                // Se já estiver a mostrar tudo, esconde o botão "Ver mais"
-                if (itensVisiveis >= cards.length) {
-                    btnVerMais.style.display = "none";
+    function atualizarPaginacao() {
+        if (window.innerWidth < 992) {
+            // Lógica para Mobile/Tablet
+            cards.forEach((card, index) => {
+                if (index < itensVisiveis) {
+                    card.style.setProperty('display', 'block', 'important');
                 } else {
-                    btnVerMais.style.display = "inline-block";
+                    card.style.setProperty('display', 'none', 'important');
                 }
-            } else {
-                // Se for Desktop, mostra TODOS os cartões e garante que o botão não aparece
-                cards.forEach(card => card.style.display = "block");
-                btnVerMais.style.display = "none";
-            }
+            });
+
+            // Mostra ou esconde o botão "Ver Mais"
+            btnVerMais.parentElement.style.display = (itensVisiveis >= cards.length) ? "none" : "block";
+        } else {
+            // Lógica para Desktop: Mostra tudo sempre
+            cards.forEach(card => {
+                card.style.setProperty('display', 'block', 'important');
+            });
+            btnVerMais.parentElement.style.display = "none";
         }
-
-        // Executa a verificação assim que a página carrega e se o ecrã for redimensionado
-        atualizarPaginacao();
-        window.addEventListener('resize', atualizarPaginacao);
-
-        // O que acontece quando clicamos no botão
-        btnVerMais.addEventListener("click", function () {
-            itensVisiveis += 4; // Revela mais 4 comentários de cada vez
-            atualizarPaginacao();
-        });
     }
+
+    btnVerMais.addEventListener("click", function (e) {
+        e.preventDefault();
+        itensVisiveis += 4;
+        atualizarPaginacao();
+    });
+
+    // Inicia e escuta redimensionamento
+    atualizarPaginacao();
+    window.addEventListener('resize', atualizarPaginacao);
 });
+
+document.querySelectorAll('.btn-close-card').forEach(botao => {
+
+    botao.addEventListener('click', function(e){
+
+        // impede propagação
+        e.preventDefault();
+        e.stopPropagation();
+
+        // pega o card
+        const card =
+            this.closest('.lazer-click-card');
+
+        // fecha
+        card.classList.remove('active');
+    });
+
+});
+card.addEventListener('click', function(e){
+
+    // ignora clique no botão X
+    if(e.target.closest('.btn-close-card')){
+        return;
+    }});
