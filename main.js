@@ -5,61 +5,49 @@ document.addEventListener('DOMContentLoaded', function () {
     // Links do menu principal
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // =========================
-    // NAVEGAÇÃO SUAVE CORRIGIDA
-    // =========================
     navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
 
-            // Se o link for para outra página (Ex: "index.html#quartos"),
-            // deixa o navegador fazer o redirecionamento normal e sai da função.
-            if (!targetId || !targetId.startsWith('#')) {
-                return; 
+        if (!targetId || !targetId.startsWith('#')) return;
+
+        e.preventDefault();
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const isMobile = window.innerWidth < 992;
+            
+            // 1. Valor fixo para mobile (tente 70 se 85 estava muito alto)
+            // No desktop, mantemos o headerHeight que você disse que está ok.
+            const offsetMobile = 70; 
+            const offset = isMobile ? offsetMobile : (headerHeight + 15);
+
+            // 2. Se for mobile, fecha o menu ANTES de calcular a posição
+            if (isMobile && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+                
+                // 3. Pequeno delay (opcional) para o cálculo não pegar o menu fechando
+                setTimeout(() => {
+                    executarScroll(targetElement, offset);
+                }, 10); 
+            } else {
+                executarScroll(targetElement, offset);
             }
-
-            e.preventDefault();
-
-            // Remove active
-            navLinks.forEach(l => l.classList.remove('active'));
-
-            // Ativa clicado
-            this.classList.add('active');
-
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-
-                let offset;
-
-                // Ajuste para celular/tablet
-                if (window.innerWidth < 992) {
-                    offset = headerHeight + 235;
-                } else {
-                    // Desktop
-                    offset = headerHeight + 20;
-                }
-
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-
-                window.scrollTo({
-                    top: elementPosition - offset,
-                    behavior: 'smooth'
-                });
-
-                // Fecha menu mobile
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-
-                if (navbarCollapse.classList.contains('show')) {
-                    const bsCollapse =
-                        bootstrap.Collapse.getInstance(navbarCollapse) ||
-                        new bootstrap.Collapse(navbarCollapse);
-
-                    bsCollapse.hide();
-                }
-            }
-        });
+        }
     });
+});
+
+// Função auxiliar para evitar repetição de código
+function executarScroll(el, offset) {
+    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+    });
+}
 
     // =========================
     // MÁSCARA TELEFONE
@@ -379,7 +367,7 @@ function openLightbox(imgSrc) {
     // Define a imagem do modal igual à imagem que foi clicada
     const lightboxImg = document.getElementById('lightboxImage');
     lightboxImg.src = imgSrc;
-    
+
     // Abre o Modal do Bootstrap
     const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'));
     lightboxModal.show();
@@ -407,7 +395,7 @@ function enviarReservaQuartos() {
     }
 
     // Monta a mensagem para o WhatsApp
-    const mensagem = 
+    const mensagem =
         "🛎️ *Nova Solicitação de Reserva* 🛎️%0A%0A" +
         "Olá! Gostaria de consultar a disponibilidade para o seguinte quarto:%0A%0A" +
         "🛏️ *Quarto Escolhido:* " + quarto + "%0A" +
@@ -432,15 +420,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const carouselElement = gallery.querySelector('.carousel');
         const thumbsContainer = gallery.querySelector('.img-thumbs-container');
         const thumbs = thumbsContainer.querySelectorAll('.quarto-img-thumb');
-        
+
         if (!carouselElement || thumbs.length === 0) return;
 
         const carouselItems = carouselElement.querySelectorAll('.carousel-item img');
         const images = Array.from(carouselItems).map(img => img.src);
 
         carouselElement.addEventListener('slide.bs.carousel', function (e) {
-            const nextIndex = e.to; 
-            
+            const nextIndex = e.to;
+
             const thumb1Index = (nextIndex + 1) % images.length;
             const thumb2Index = (nextIndex + 2) % images.length;
 
@@ -460,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // 3. Adiciona um efeito de "surgimento" suave na nova miniatura que entra
                 thumbs[1].classList.add('fade-in-thumb');
-                
+
                 // Limpa a animação de surgimento após terminar
                 setTimeout(() => {
                     thumbs[1].classList.remove('fade-in-thumb');
@@ -475,20 +463,20 @@ document.addEventListener('DOMContentLoaded', function () {
    ÁREA DE LAZER: ENTRADA (MOTION) + CLIQUE
    ========================= */
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // 1. Animação de Entrada estilo Framer Motion
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.from(".lazer-click-card", {
-            y: 60,              
-            opacity: 0,         
-            duration: 0.8,        
-            stagger: 0.2,       
-            ease: "power2.out", 
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out",
             scrollTrigger: {
                 trigger: "#area-de-lazer",
-                start: "top 80%", 
+                start: "top 80%",
                 toggleActions: "play none none none"
             }
         });
@@ -498,10 +486,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const lazerCards = document.querySelectorAll('.lazer-click-card');
 
     lazerCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            
+        card.addEventListener('click', function (e) {
+
             // Se clicar nas setas do carrossel ou no botão fechar, não faz o toggle da caixa
-            if(e.target.closest('.carousel-control-prev') || e.target.closest('.carousel-control-next') || e.target.closest('.btn-close-card')) {
+            if (e.target.closest('.carousel-control-prev') || e.target.closest('.carousel-control-next') || e.target.closest('.btn-close-card')) {
                 return;
             }
 
@@ -516,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Abre este cartão
             this.classList.add('is-open');
-            
+
             // Mostra as setas do carrossel apenas quando o cartão está aberto
             this.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(btn => btn.classList.remove('d-none'));
         });
@@ -524,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 3. Botão para fechar o cartão
     document.querySelectorAll('.btn-close-card').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             e.stopPropagation(); // Evita que o clique reabra o cartão
             const card = this.closest('.lazer-click-card');
             if (card) {
@@ -535,7 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 4. Fechar ao clicar fora de todos os cartões
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!e.target.closest('.lazer-click-card')) {
             lazerCards.forEach(card => {
                 if (card.classList.contains('is-open')) {
@@ -566,9 +554,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 borderWidth: 6,
                 borderColor: "rgba(255, 255, 255, 0.45)",
                 scrollTrigger: {
-                    trigger: ".hero-wrapper", 
+                    trigger: ".hero-wrapper",
                     start: "top top",
-                    end: "+=450", 
+                    end: "+=450",
                     scrub: 1
                 }
             });
@@ -579,7 +567,7 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.to("#carousel", {
                 width: "92%",
                 height: "75svh",      // Ajustado perfeitamente para telemóveis
-                marginTop: "12svh", 
+                marginTop: "12svh",
                 borderRadius: "24px",
                 borderWidth: 4,
                 borderColor: "rgba(255, 255, 255, 0.45)",
@@ -640,7 +628,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.querySelectorAll('.btn-close-card').forEach(botao => {
 
-    botao.addEventListener('click', function(e){
+    botao.addEventListener('click', function (e) {
 
         // impede propagação
         e.preventDefault();
@@ -655,9 +643,10 @@ document.querySelectorAll('.btn-close-card').forEach(botao => {
     });
 
 });
-card.addEventListener('click', function(e){
+card.addEventListener('click', function (e) {
 
     // ignora clique no botão X
-    if(e.target.closest('.btn-close-card')){
+    if (e.target.closest('.btn-close-card')) {
         return;
-    }});
+    }
+});
