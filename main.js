@@ -650,3 +650,4 @@ card.addEventListener('click', function (e) {
         return;
     }
 });
+

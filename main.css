@@ -1478,15 +1478,6 @@ footer {
     transform: translateZ(0);
 }
 
-@media (max-width: 991px){
-
-    *{
-        animation: none !important;
-        transition: none !important;
-    }
-
-}
-
 @media (min-width: 992px){
 
     header img:hover {
