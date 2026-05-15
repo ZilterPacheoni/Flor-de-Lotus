@@ -1507,3 +1507,26 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+
+    /* Alvo: A div que embrulha o mapa */
+    .container-do-mapa {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px;
+        /* Adiciona uma folga nas laterais para não colar na borda da tela */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        /* Centraliza o conteúdo horizontalmente */
+    }
+
+    /* Alvo: O mapa (iframe) que está dentro da div */
+    .container-do-mapa iframe {
+        width: 100% !important;
+        /* Obriga o mapa a ter a largura máxima da tela do celular */
+        max-width: 100%;
+        height: 300px;
+        /* Reduz um pouco a altura no mobile para ficar proporcional */
+    }
+}
