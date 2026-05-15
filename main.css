@@ -28,7 +28,7 @@ body {
     HEADER (MENU PRINCIPAL)
    ========================================= */
 #cabecalho {
-    background: rgba(31,60,77,0.95);
+    background: rgba(31, 60, 77, 0.95);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -219,27 +219,30 @@ section {
 img {
     transition: all 0.4s ease;
 }
-@media (min-width: 992px){
 
-    .lazer-click-card:hover{
+@media (min-width: 992px) {
+
+    .lazer-click-card:hover {
         transform: translateY(-6px);
     }
 
-    .lazer-click-card img:hover{
+    .lazer-click-card img:hover {
         transform: scale(1.03);
     }
 
 }
-@media (max-width: 991px){
+
+@media (max-width: 991px) {
 
     .lazer-click-card,
     .lazer-click-card img,
     .lazer-click-card:hover,
-    .lazer-click-card img:hover{
+    .lazer-click-card img:hover {
         transform: none !important;
     }
 
 }
+
 /* =========================================
    FUNDOS DE SECÇÃO
    ========================================= */
@@ -1478,29 +1481,29 @@ footer {
     transform: translateZ(0);
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
 
     header img:hover {
-    transform: scale(1.03);
+        transform: scale(1.03);
     }
 
     .carousel-indicators .active {
-    opacity: 1 !important;
-    background-color: var(--dourado) !important;
-    transform: scale(1.4);
-    /* Dá um efeito de destaque 3D */
+        opacity: 1 !important;
+        background-color: var(--dourado) !important;
+        transform: scale(1.4);
+        /* Dá um efeito de destaque 3D */
     }
 
     .img-main-container:hover .quarto-img-main {
-    transform: scale(1.03);
+        transform: scale(1.03);
     }
 
-    .lazer-click-card img:hover{
+    .lazer-click-card img:hover {
         transform: scale(1.03);
     }
 
     header img:hover {
-    transform: scale(1.03);
+        transform: scale(1.03);
+    }
 }
 
-}

@@ -6,48 +6,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
 
     navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
 
-        if (!targetId || !targetId.startsWith('#')) return;
+            if (!targetId || !targetId.startsWith('#')) return;
 
-        e.preventDefault();
+            e.preventDefault();
 
-        const targetElement = document.querySelector(targetId);
+            const targetElement = document.querySelector(targetId);
 
-        if (targetElement) {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            const isMobile = window.innerWidth < 992;
-            
-            // 1. Valor fixo para mobile (tente 70 se 85 estava muito alto)
-            // No desktop, mantemos o headerHeight que você disse que está ok.
-            const offsetMobile = 70; 
-            const offset = isMobile ? offsetMobile : (headerHeight + 15);
+            if (targetElement) {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                const isMobile = window.innerWidth < 992;
 
-            // 2. Se for mobile, fecha o menu ANTES de calcular a posição
-            if (isMobile && navbarCollapse.classList.contains('show')) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
-                bsCollapse.hide();
-                
-                // 3. Pequeno delay (opcional) para o cálculo não pegar o menu fechando
-                setTimeout(() => {
+                // 1. Valor fixo para mobile (tente 70 se 85 estava muito alto)
+                // No desktop, mantemos o headerHeight que você disse que está ok.
+                const offsetMobile = 70;
+                const offset = isMobile ? offsetMobile : (headerHeight + 15);
+
+                // 2. Se for mobile, fecha o menu ANTES de calcular a posição
+                if (isMobile && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+
+                    // 3. Pequeno delay (opcional) para o cálculo não pegar o menu fechando
+                    setTimeout(() => {
+                        executarScroll(targetElement, offset);
+                    }, 10);
+                } else {
                     executarScroll(targetElement, offset);
-                }, 10); 
-            } else {
-                executarScroll(targetElement, offset);
+                }
             }
-        }
+        });
     });
-});
 
-// Função auxiliar para evitar repetição de código
-function executarScroll(el, offset) {
-    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({
-        top: elementPosition - offset,
-        behavior: 'smooth'
-    });
-}
+    // Função auxiliar para evitar repetição de código
+    function executarScroll(el, offset) {
+        const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+        });
+    }
 
     // =========================
     // MÁSCARA TELEFONE
@@ -650,4 +650,3 @@ card.addEventListener('click', function (e) {
         return;
     }
 });
-
